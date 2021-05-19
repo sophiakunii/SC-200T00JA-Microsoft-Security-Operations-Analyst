@@ -10,7 +10,7 @@ Defender for Endpoint の攻撃緩和機能を確認するため、シミュレ�
 
 このタスクでは、シミュレーション攻撃を 6 回行って、Microsoft Defender for Endpoint の機能を確認します。
 
-1. まだ、Microsoft Defender セキュリティ センターをブラウザーで開いていない場合は、お使いになっているテナントの管理者としてログインし、Microsoft Defender セキュリティ センターを開始してください (https://securitycenter.microsoft.com)。
+1. まだ、Microsoft Defender セキュリティ センターをブラウザーで開いていない場合は、お使いになっているテナントの管理者としてログインし、Microsoft Defender セキュリティ センターを開始してください (https://securitycenter.microsoft.com)
 
 2. メニューから 「**評価とチュートリアル**」 を選択し、左側で 「**シミュレーションとチュートリアル**」 を選びます。
 

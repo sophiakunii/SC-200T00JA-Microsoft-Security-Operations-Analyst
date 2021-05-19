@@ -16,7 +16,7 @@
 
 2. ブラウザを開き、新しい Microsoft Edge ブラウザを検索、ダウンロード、およびインストールします。新しい Edge ブラウザーを起動します。
 
-3. Edge ブラウザーで Azure ポータルに移動します https://portal.azure.com。
+3. Edge ブラウザーで Azure ポータルに移動します https://portal.azure.com
 
 4. **サインイン**ダイアログボックスで、ラボ ホスティング プロバイダーから提供された**テナントの電子メール**アカウントをコピーして貼り付け、「**次へ**」 を選択します。
 
@@ -40,7 +40,7 @@
 
 このタスクでは、Azure Active Directory Identity Protection コネクタを接続します。
 
-1. データ コネクタ タブで、リストから 「**Azure Active Directory Identity Protection **」 コネクタを選択します。
+1. データ コネクタ タブで、リストから 「**Azure Active Directory Identity Protection**」 コネクタを選択します。
 
 2. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
 
@@ -64,7 +64,7 @@
 
 2. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
 
-3. 「** アラート**」 を選択し、「**変更の適用**」 を選択します。
+3. 「**アラート**」 を選択し、「**変更の適用**」 を選択します。
 
 ### タスク 6: Microsoft Defender for Office 365 に接続する
 

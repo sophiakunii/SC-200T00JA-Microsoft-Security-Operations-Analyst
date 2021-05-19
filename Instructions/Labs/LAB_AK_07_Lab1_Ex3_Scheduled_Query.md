@@ -89,7 +89,7 @@ timestamp = StartTimeUtc, AccountCustomEntity = UserPrincipalName, IPCustomEntit
 
 10. ブラウザーを閉じます。アラートが処理されるまで 10 分待ちます。
 
-11.  Edge ブラウザーで Azure portal に移動します https://portal.azure.com。
+11.  Edge ブラウザーで Azure portal に移動します https://portal.azure.com
 
 12. **サインイン**ダイアログボックスで、ラボのホスティングプロバイダーから提供された**テナントの電子メール**アカウントをコピーして貼り付け、「**次へ**」を選択します。
 

@@ -6,7 +6,7 @@
 
 1. 管理者として WIN1 仮想マシンにログインします。パスワードは **Pa55w.rd** です。  
 
-2. Microsoft Edge ブラウザーで Azure ポータルに移動します https://portal.azure.com。
+2. Microsoft Edge ブラウザーで Azure ポータルに移動します https://portal.azure.com
 
 3. **サインイン**ダイアログボックスで、ラボ ホスティング プロバイダーから提供された**テナントの電子メール**アカウントをコピーして貼り付け、「**次へ**」 を選択します。
 
