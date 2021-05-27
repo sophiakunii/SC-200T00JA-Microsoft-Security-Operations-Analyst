@@ -27,22 +27,22 @@
 11. **次へ:** を選択します。「**ルール ロジックを設定 >**」 ボタン:
 
 12. ルールクエリの場合は、次 KQL ステートメントを貼り付けます。
-
+```
 SigninLogs
 | where ResultType == "50057"
 | where ResultDescription =~ "User account is disabled. The account has been disabled by an administrator."
 | summarize StartTimeUtc = min(TimeGenerated), EndTimeUtc = max(TimeGenerated), count(), applicationCount = dcount(AppDisplayName), 
 applicationSet = makeset(AppDisplayName) by UserPrincipalName, IPAddress
 | extend timestamp = StartTimeUtc, AccountCustomEntity = UserPrincipalName, IPCustomEntity = IPAddress
-
+```
 **警告:** 仮想マシンへの貼り付け機能を使用する場合。  追加 | （パイプ）文字を追加できます。  貼り付けたものが次の KQL ステートメントのようになっていることを確認してください。
 
 **注:** 「クエリ結果の表示」へのリンクを選択した場合、結果は表示されません。  エラーが表示されないことを確認します。  
 
 13. エンティティのマップを確認します。  クエリ出力には次のフィールドが含まれているため、エンティティはクエリでマップされたものとして表示されます。
-
+```
 timestamp = StartTimeUtc, AccountCustomEntity = UserPrincipalName, IPCustomEntity = IPAddress
-
+```
 14. 分析ルールウィザードに戻ります-クエリスケジュール領域に新しいルールブレードを作成し、「**5**」 と入力して、クエリを実行するすべてのオプションで「**分**」を選択します。
 
 15. クエリのスケジュール領域で、「**1**」 を入力し、最後のオプションからルックアップデータの「**日数**」を選択します。
