@@ -28,6 +28,7 @@
 
 8. 新規クエリ1のスペースに以下の KQL ステートメントを入力します。
 
+```
 let lookback = 2d;
 DeviceEvents
 | where TimeGenerated >= ago(lookback) 
@@ -37,11 +38,13 @@ DeviceEvents
 | summarize count() by bin(TimeGenerated, 3m), c2
 | where count_ > 5
 | render timechart 
+```
 
 9. このステートメントの目的は、C2 が一貫してビーコンを出しているかどうかを確認するための視覚化を提供することです。  3m の設定を 30 秒以上に調整してください。   count_ > 5 の設定を他のスレッショルドカウントに変更して、影響を確認します。
 
 10. これで、C2 サーバにビーコン送信されている DNS リクエストが特定できました。  次に、どのデバイスがビーコンになっているかを確認します。  次の KQL ステートメントを入力します。
 
+```
 let lookback = 2d;
 DeviceEvents
 | where TimeGenerated >= ago(lookback) 
@@ -50,6 +53,7 @@ DeviceEvents
 | where c2 startswith "sub"
 | summarize cnt=count() by bin(TimeGenerated, 5m), c2, DeviceName
 | where cnt > 15
+```
 
 **注：** 生成されるログデータは、1つのデバイスからのみです。
 
@@ -59,6 +63,7 @@ DeviceEvents
 
 13. クエリには、次の KQL ステートメントを入力します。
 
+```
 let lookback = 2d;
 DeviceEvents
 | where TimeGenerated >= ago(lookback) 
@@ -67,6 +72,7 @@ DeviceEvents
 | where c2 startswith "sub"
 | summarize cnt=count() by bin(TimeGenerated, 5m), c2, DeviceName
 | where cnt > 15
+```
 
 14. 名前には 「*C2 Hunt* 」と入力します。
 
