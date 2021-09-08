@@ -59,7 +59,7 @@ LowActivityAccounts | where Account contains "Mal"
 
 **注:** このスクリプトを実行しても、結果は得られません。
 
-4. 次のステートメントは、クエリウィンドウに表示されるクエリ時間範囲内のレコードをすべてのテーブルと列で検索する方法を示しています。このスクリプトを実行する前に、クエリウィンドウで、時間範囲を「最後の時間」に変更します。次のステートメントを入力し、「**実行**」を選択します: 
+4. 次のステートメントは、**クエリ時間範囲内のレコード**をすべてのテーブルと列で検索する方法を示しています。このスクリプトを実行する前に、クエリウィンドウで、時間範囲を「過去３０分」に変更します。次のステートメントを入力し、「**実行**」を選択します: 
 
 ```KQL
 search "err"
@@ -124,8 +124,8 @@ Syslog
 | where TimeGenerated >= ago(timeframe)
 | where ProcessName contains "squid"
 | extend 
-  HTTP_Status_Code = extract("(TCP_(([A-Z]+)…-9]{3}))",8,SyslogMessage),    
-  Domain = extract("(([A-Z]+ [a-z]{4…Z]+ )([^ :\\/]*))",3,SyslogMessage)
+  HTTP_Status_Code = extract("(TCP_(([A-Z]+)…-9){3})",8,SyslogMessage),    
+  Domain = extract("(([A-Z]+ [a-z][4…Z]+ )([^ :\\/]*))",3,SyslogMessage)
 | where HTTP_Status_Code == "200"
 | where Domain contains "."
 | where Domain has_any (DomainList)
@@ -266,11 +266,11 @@ SecurityEvent
 | summarize arg_max(TimeGenerated, *) by Account
 ```
 
-Statement 1 には、最後のアクティビティがログインだった Account が含まれます。
+ステートメント 1 には、最後のアクティビティがログインだった Account が含まれます。
 
-まず、SecurityEvent テーブルが集計され、各 Account の最新行を返します。  その後、EventID が 4624 (ログイン) に等しい行だけ返します。
+まず、SecurityEvent テーブルが集計され、各 Account の最新行を返します。  その後、**EventID が 4624 (ログイン)** に等しい行だけ返します。
 
-Statement 2 はログインしている Account の最新のログインを含みます。  
+ステートメント 2 はログインしている Account の最新のログインを含みます。  
 
 SecurityEvent テーブルは、EventID = 4624 のみを含むようにフィルター処理されます。これらの結果は、Account ごとに最新のログイン行に対して集計されます。
 
@@ -315,9 +315,10 @@ bin() 関数では、指定のビン サイズの整数の倍数になるよう�
 
 ```KQL
 SecurityEvent 
-| summarize count() by bin(TimeGenerated, 1d) 
+| summarize count() by bin(TimeGenerated, 1h) 
 | render timechart
 ```
+**1h** を別の値に変更して実行してみましょう。
 
 ### タスク 5: KQL でマルチテーブルステートメントを作成する
 
@@ -329,7 +330,7 @@ Query 1 で SecurityEvent のすべての行と SecurityAlert のすべての行
 
 Query 2 で SecurityEvent のすべての行数と SecurityAlert のすべての行数である 1 つの行と列が返されます
 
-Query 3 で SecurityEvent のすべての行と SecurityAlert のすべての 1 つの行が返されます SecurityAlert の行は、SecurityAlert の行数です。
+Query 3 で SecurityAlert のすべての行と SecurityEvent の 1 つの行が返されます。SecurityEvent の行は、SecurityEvent の行数です。
 
 各クエリを個別に実行して、結果を確認します。 
 
@@ -352,8 +353,8 @@ SecurityEvent
 
 クエリ 3
 ```KQL
-SecurityEvent 
-| union (SecurityAlert  | summarize count()) 
+SecurityAlert 
+| union (SecurityEvent  | summarize count()) 
 | project count_
 ```
 
@@ -382,8 +383,6 @@ SecurityEvent
 ) on Account
 ```
 
-結合で指定した最初のテーブルが左テーブルと見なされます。  join キーワードの後のテーブルが右テーブルです。  テーブルの列を操作する場合、$left.Columnname と $right.Column name は、参照されるテーブルの列を区別するためのものです。 
-
 ### タスク 6: KQL で文字列データを操作する
 
 このタスクでは、KQL ステートメントを使用して構造化および非構造化文字列フィールドを操作します。
@@ -400,7 +399,7 @@ print extract("x=([0-9.]+)", 1, "hello x=45.6|wo") == "45.6"
 
 ```KQL
 let top5 = SecurityEvent
-| where EventID == 4625 and AccountType == 'User'
+| where EventID == 4624 and AccountType == 'User'
 | extend Account_Name = extract(@"^(.*\\)?([^@]*)(@.*)?$", 2, tolower(Account))
 | summarize Attempts = count() by Account_Name
 | where Account_Name != ""
@@ -408,7 +407,7 @@ let top5 = SecurityEvent
 | summarize make_list(Account_Name);
 
 SecurityEvent
-| where EventID == 4625 and AccountType == 'User'
+| where EventID == 4624 and AccountType == 'User'
 | extend Name = extract(@"^(.*\\)?([^@]*)(@.*)?$", 2, tolower(Account))
 | extend Account_Name = iff(Name in (top5), Name, "Other")
 | where Account_Name != ""
@@ -474,10 +473,11 @@ Sqlactivity, FailedLogon, dbfailedLogon, successLogon )
 
 4. 次のステートメントは、動的フィールドの操作を示しています
 
-Log Analytics テーブル内には、動的として定義されたフィールドタイプがあります。  動的フィールドには、次のようなキーと値のペアが含まれます。
-{"eventCategory":"Autoscale","eventName":"GetOperationStatusResult","operationId":"xxxxxxxx-6a53-4aed-bab4-575642a10226","eventProperties":"{\"OldInstancesCount\":6,\"NewInstancesCount\":5}","eventDataId":" xxxxxxxx -efe3-43c2-8c86-cd84f70039d3","eventSubmissionTimestamp":"2020-11-30T04:06:17.0503722Z","resource":"ch-appfevmss-pri","resourceGroup":"CH-RETAILRG-PRI","resourceProviderValue":"MICROSOFT.COMPUTE","subscriptionId":" xxxxxxxx -7fde-4caf-8629-41dc15e3b352","activityStatusValue":"Succeeded"}
+Log Analytics テーブル内には、動的タイプとして定義されたフィールドがあります。  動的フィールドには、次のようなキーと値のペアが含まれます。
 
-動的フィールド内の文字列にアクセスするには、ドット表記を使用します。  AzureActivity テーブルの Properties_d フィールドの型は動的です。この例では、Properties_d.eventCategory というフィールド名を使用して eventCategory にアクセスできます。
+{**"eventCategory":"Autoscale"**,"eventName":"GetOperationStatusResult","operationId":"xxxxxxxx-6a53-4aed-bab4-575642a10226","eventProperties":"{\"OldInstancesCount\":6,\"NewInstancesCount\":5}","eventDataId":" xxxxxxxx -efe3-43c2-8c86-cd84f70039d3","eventSubmissionTimestamp":"2020-11-30T04:06:17.0503722Z","resource":"ch-appfevmss-pri","resourceGroup":"CH-RETAILRG-PRI","resourceProviderValue":"MICROSOFT.COMPUTE","subscriptionId":" xxxxxxxx -7fde-4caf-8629-41dc15e3b352","activityStatusValue":"Succeeded"}
+
+動的フィールド内の文字列にアクセスするには、**ドット表記**を使用します。  AzureActivity テーブルの Properties_d フィールドの型は動的です。この例では、Properties_d.eventCategory というフィールド名を使用して eventCategory にアクセスできます。
 
 クエリ ウィンドウ内次のステートメントを入力し、**実行** 
 
