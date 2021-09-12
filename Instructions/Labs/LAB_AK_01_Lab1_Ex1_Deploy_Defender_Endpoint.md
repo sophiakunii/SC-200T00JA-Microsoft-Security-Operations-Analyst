@@ -26,7 +26,7 @@
 
 2.  Microsoft Edge ブラウザーを開いて「edge ブラウザー更新」を検索し、新しい Microsoft Edge ブラウザーをダウンロードしてインストールします。この手順は、ホスティングされている仮想マシンで確実に Microsoft Edge の最新版を実行する上で重要です。新しい Edge ブラウザーを起動します。
 
-3.  Edge ブラウザーで Microsoft Defender セキュリティ センターに進みます (https://securitycenter.microsoft.com)
+3.  Edge ブラウザーで Microsoft Defender セキュリティ センターに進みます (https://security.microsoft.com)
 
 4. **サインイン** ダイアログボックスで、ラボ ホスティング プロバイダーの提供した管理者ユーザー名のテナント電子メール アカウントをコピーして貼り付け、「**次へ**」 を選択します。
 
@@ -34,17 +34,21 @@
 
 **注**: 「このセクションにアクセスできません」というメッセージが表示されたら、何回かリロードしてみてください（最大 5 分程度待つ必要があるかもしれません）。 アクセス ルールでテナントを広める必要があるかもしれません。  
 
-6. **Microsoft セキュリティ センター** セットアップの Step 2 で「**Next**」を選択します。
+6. **Microsoft 365 Defender** ポータルで「**Settings**」を選択します。
 
-7. ステップ 3 「**Set up preferences**」で、このトレーニング テナントの管理に適したデータ ストレージの場所を選択します。 ここでは **US** を選択してください。
+7. **Settings** ページで、**Microsoft 365 Defender** を選択します。このページを表示するには**5分**程度待つ必要があります。
 
-8. **Preview features** が **On** になっていることを確認してください。
+8. **Account** ページが表示されたら、**Oreview features** を選択し、**Turen on preview features** が **On** になっていることを確認してください。
 
-9. 「**Next**」を選択します。  
+9. **Settings** をクリックして、Settings ページに戻ります。  
 
-10. **Creating your Microsoft Defender for Endpoint account** が完了するまで待ちます。
+10. メニューに**Device discovery** が表示されるまで、画面をリロードしながら待ちます。または、一度サインアウトして、再度ログインしなおします。Defender for endpoint が有効になると、メニューには **Endpoints** と **Device discovery** が表示されます。
 
-11. **Creating your Microsoft Defender for Endpoint account**の進行状況バーが完了すると、Step 4 のオプションが表示されます。ここでは何もせず、 **Microsoft Defender for Endpoint を使用して開始**を選択します。
+11. **Device discovery** をクリックし、**Discovery setup** で **Standard discovery(recommended)** が選択されていることを確認します。
+
+12. **Settings** メニューに戻ります。
+
+13. 画面の右上にあるギアマークをクリックすると、言語の設定を変更できます。必要に応じて設定してください。以降は日本語メニューを前提にしています。
 
 ### タスク 3: デバイスのオンボード
 
@@ -52,77 +56,77 @@
 
 1. https://securitycenter.microsoft.com で Microsoft Defender セキュリティ センターに進みます。現在ポータルを使用していない場合は、**テナントの電子メール**の資格情報を使用してログインします。
 
-2. 左側のメニュー バーで 「**Settings**」 を選択します。
+2. 左側のメニュー バーで 「**設定**」 を選択します。
 
-3. **Device Management** セクションで 「**Onboarding**」 を選択します。
+3. **エンドポイント** を選択します。
 
-4. デバイスのオンボード エリアで 「**Download onboarding package**」 ボタンを選択します。
+4. **デバイス管理**セクションにある**オンボード**を選択し、**デバイスをオンボードする** エリアで 「**オンボードパッケージのダウンロード**」 ボタンを選択します。
 
 5. ダウンロードされた zip ファイルをローカル フォルダーに抽出します (［ドキュメント］ フォルダーなど)。
 
-6. 抽出されたファイル (**WindowsDefenderATPLocalOnboardingScript.cmd**) を右クリックし「**管理者として実行**」 を選択します。  Windows SmartScreen が表示されたら「実行」 を選択します。
+6. 抽出されたファイル (**WindowsDefenderATPLocalOnboardingScript.cmd**) を右クリックし「**管理者として実行**」 を選択します。  Windows SmartScreen によって「WindowsによってPCが保護されました**」が表示されたら「**詳細情報**」をクリックして「**実行**」 を選択します。
 
-**注** 既定で、ファイルは 「c:\users\admin\downloads」 ディレクトリにあります。
+**注** 既定で、ZIPファイルは 「c:\users\admin\downloads」 ディレクトリにあります。
     
 7. スクリプトの質問に対して 「**Y**」 と回答します。完了したら、コマンド画面に「**Successfully onboarded machine to Microsoft Defender for Endpoint**」といった内容のメッセージが表示されます。 
 
-8. ポータルの 「Onboarding」 ページで、"Run a detection test" に表示されているスクリプトをクリップボードにコピーします。新しい **管理者: コマンド プロンプト** ウィンドウを開き、スクリプトをペーストして実行します。
+8. ポータルの 「Onboarding」 ページで、"Run a detection test" に表示されているスクリプトをクリップボードにコピーします。新しい **管理者: コマンド プロンプト** ウィンドウを開き、スクリプトをペーストして実行します。コマンドプロンプトは実行が完了すると自動的に閉じられます。
 
-9. Microsoft Defender セキュリティ センターのポータル メニューで 「**Deveice Inventory**」 を選択します。Win1 がリストに表示されます。
+9. Microsoft 365 Defender ポータル メニューで 「**デバイスのインベントリ**」 を選択します。Win1 がリストに表示されます。表示されない場合は、画面をリフレッシュし続けてください。
 
-**注** デバイスがポータルに表示されるまでに最高 5 分かかることがあります。
+**注** デバイスがポータルに表示されるまでに最高 5 分程度かかることがあります。
 
 
 ### タスク 4: ロールの構成
 
 このタスクでは、デバイス グループで使用するロールを設定します。
 
-1. Microsoft Defender セキュリティ センターのポータルで左側のメニュー バーから 「**Settings**」 を選択します。 
+1. Microsoft 365 Defender ポータルで左側のメニュー バーから 「**設定**」-「**エンドポイント**」を選択します。 
 
-2. **Permission**エリアで 「**Roles**」 を選択します。
+2. **アクセス許可**エリアで 「**ロール**」 を選択します。
 
 3. 「**Turn on roles**」 ボタンを選択します。
 
-4. 「**Add item**」 を選択します。
+4. 「**アイテムを追加**」 を選択します。
 
 5. ロールの追加 ダイアログで以下を入力します。
-    Role Name: **Live response role**
-    Live response capabilities: チェックボックスを選択します
-    Advanced: 選択します。
+    Role Name: **Tier Live Response**
+    Live response 機能: チェックボックスを選択します
+    上級: ラジオボタンを選択します。
 
-6. 「**Next**」を選択します。
+6. 「**次へ**」を選択します。
 
-7. Assigned user groups　タブで「**sg-IT**」 を選び、「**Add selected groups**」 を選択します。
+7. **割り当てられたユーザーグループ** タブで「**sg-IT**」 を選び、「**選択したグループを追加します**」 を選択します。
 
-8. 「**Save**」を選択します。
+8. 「**保存**」を選択します。
 
 
 ### タスク 5: デバイス グループの構成
 
 このタスクでは、アクセス コントロールと自動化の設定が可能なデバイス グループを構成します。
 
-1. 左側のメニュー バーで 「**Settings**」 を選択します。 
+1. 左側のメニュー バーで 「**設定**」 を選択します。 
 
-2. **Permissions** エリアで 「**Device groups**」 を選択します。
+2. **アクセス許可** エリアで 「**デバイスグループ**」 を選択します。
 
-3. 「**Add device groups**」 を選択します。
+3. 「**Device group の追加**」 を選択します。
 
 4. 全般 タブに次の情報を入力します。
 
-- デバイス グループ名: Regular
-- 自動化レベル: Full - remediate threats automatically (完全 - 脅威を自動的に修復する)
+- デバイス グループ名: **Regular**
+- 自動化レベル: **完全 - 自動的な脅威の修正**
 
-5. 「**Next**」を選択します。
+5. 「**次へ**」を選択します。
 
-7. **Devices** タブで、OS の Value を **Windows 10** に設定します。
+7. **デバイス** タブで、OS の 値 を **Windows 10** に設定します。
 
-9. **Preview** タブで、**Show preview** をクリックし、Win1 が表示されることを確認します。
+9. **デバイスのプレビュー** タブで、**プレビューの表示** をクリックし、**Win1** が表示されることを確認します。
 
-10. **User access** タブで 「**sg-IT**」 を選び、「**Add selected groups**」 を選択します。
+10. **ユーザーアクセス** タブで 「**sg-IT**」 を選び、「**選択したグループを追加します**」 を選択します。
 
-7. 「**Done**」を選択します。
+7. 「**完了**」を選択します。
 
-8. **Apply changes** 変更をクリックして適用します。
+8. 画面上に黄色いメッセージ枠が表示されるので、**変更を適用** 変更をクリックして適用します。
 
 
 ## 演習 2 に進みます。
