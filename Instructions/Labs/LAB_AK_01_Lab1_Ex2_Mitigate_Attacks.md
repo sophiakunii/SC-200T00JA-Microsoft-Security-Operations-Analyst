@@ -4,12 +4,14 @@
 
 あなたは Microsoft Defender for Endpoint を実装している企業で働くセキュリティ オペレーションアナリストです。あなたの上司は、いくつかのデバイスをオンボードして、SecOps チームの応答手順で必要な変更に関する情報を提供しようとしています。
 
-Defender for Endpoint の攻撃緩和機能を確認するため、シミュレーション攻撃を 6 回行います。
+このタスクでは、シミュレーション攻撃を行って、Microsoft Defender for Endpoint の機能を確認します。
+なお、この操作はローカルPCではなく、オンボード済みのラボの Win1 PC から行ってください。
 
 ### タスク 1: シミュレーション攻撃
 
 このタスクでは、シミュレーション攻撃を行って、Microsoft Defender for Endpoint の機能を確認します。
 なお、この操作はローカルPCではなく、オンボード済みのラボの Win1 PC から行ってください。
+
 
 1. ラボの Win11 https://security.microsoft.com にアクセスして、Microsoft 365 Defender ページに移動してください。Defender for Endpoint は、現在こちらに統合されました。
 
