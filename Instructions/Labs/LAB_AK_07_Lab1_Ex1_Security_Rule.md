@@ -20,14 +20,12 @@
 
 6. Azure Sentinel ワークスペースを選択します。
 
-7. 構成領域から「**分析**」を選択し、「**ルールテンプレートタブ**」を選択します。
+7. 構成領域から「**分析**」を選択し、「**規則のテンプレート**」を選択します。
 
 8. 検索ボックスに 「*defender*」 と入力します。
 
-9. .結果セットで、「**Microsoft Defender Advanced Threat Protection アラートに基づいてインシデントを作成する**」を選択します。 
+9. .結果セットで、「**Create incidents based on Microsoft Defender for Endpoint alerts**」を選択します。 
  
-**注:** ルール名は、「Microsoft Defender for Endpoint アラートに基づいてインシデントを作成する」と表示されることもあります。
-
 10. 右側のブレードで、「**ルールの作成**」を選択 します。
 
 11. 重要度のフィルターを「**カスタム**」に変更します。.
