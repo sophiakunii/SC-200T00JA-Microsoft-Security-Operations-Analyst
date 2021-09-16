@@ -38,7 +38,7 @@
 
 9. ブラウザに表示されている CEF コレクターをインストールするためのコマンドをメモ帳等に貼り付けます。
 
-10. **Sudo python cef_installer.py** と書かれている部分を **Sudo python2 cef_installer.py** に修正します。
+10. **Sudo python cef_installer.py** と書かれている部分を **Sudo python3 cef_installer.py** に修正します。
  
 11. コマンドをコピーし、ssh のプロンプトに貼り付けて実行します。
 
