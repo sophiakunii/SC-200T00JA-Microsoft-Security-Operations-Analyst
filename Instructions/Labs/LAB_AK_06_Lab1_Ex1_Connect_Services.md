@@ -1,4 +1,4 @@
-﻿# モジュール 6 - ラボ 1 - 演習 1 - データ コネクタを使用して Azure Sentinel にデータを接続する
+﻿# モジュール 6 - ラボ 1 - 演習 1 - データコネクタを使用して Azure Sentinel にデータを接続する
 
 ## ラボ シナリオ
 
@@ -6,31 +6,31 @@
 
 あなたは、Azure Sentinel データ コネクタを使用して、さまざまなソースからのログ データを統合することを計画しています。組織の各データ ソースを適切な Azure Sentinel データ コネクタにマップする管理用のコネクタ計画を作成する必要があります。
 
-**重要な警告!**  仮想マシン WIN1とWIN2はモジュール７で使います。  仮想マシンを保存します。   保存せずにラボを終了する場合は、WIN1とWIN2にコネクタを再度インストールする必要があります。
+**重要な警告!**  仮想マシン WIN1 と WIN2 はモジュール７で使います。   仮想マシンを保存します。   保存せずにラボを終了する場合は、WIN1 と WIN2 にコネクタを再度インストールする必要があります。
 
-### タスク 1: AzureSentinelワークスペースにアクセスします。
+### タスク 1: Azure Sentinel ワークスペースにアクセスします。
 
 このタスクでは、Azure Sentinel ワークスペースにアクセスします。
 
-1. 管理者として WIN1 仮想マシンにログインします。パスワードは**Pa55w.rd** です。  
+1. 管理者として WIN1 仮想マシンにログインします。パスワードは **Pa55w.rd** です。  
 
 2. Microsoft Edge ブラウザーを開きます。
 
 3. Microsoft Edgeブラウザーで Azure ポータルに移動します https://portal.azure.com。
 
-4. **サインイン** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントの電子メール**アカウントをコピーして貼り付け、「**次へ**」を選択します。
+4. **サインイン**ダイアログボックスで、ラボ ホスティング プロバイダーから提供された**テナントの電子メール**アカウントをコピーして貼り付け、「**次へ**」 を選択します。
 
 5. **パスワードの入力**ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントパスワード** をコピーして貼り付け、「**サインイン**」を選択します。
 
-6. Azureポータルの検索バーに「*Sentinel*」と入力し、「**Azure Sentinel**」を選択します。
+6. Azure ポータルの検索バーに 「*Sentinel*」 と入力し、「**Azure Sentinel**」 を選択します。
 
-7. 前のラボで作成した AzureSentinel ワークスペースを選択します。
+7. 前のラボで作成した Azure Sentinel ワークスペースを選択します。
 
 ### タスク 2: Azure Active Directory コネクタを接続する
 
 このタスクでは、Azure Active Directory コネクタを Azure Sentinel に接続します。
 
-1. 構成領域で、「**データコネクタ**」を選択します。  データ コネクタ ページで、リストから**Azure Active Directory** タイルを選択します。
+1. 構成領域で、 「**データコネクタ**」を選択します。  データ コネクタ ページで、リストから **Azure Active Directory** タイルを選択します。
 
 2. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
 
@@ -40,17 +40,17 @@
 
 このタスクでは、Azure Active Directory Identity Protection コネクタを Azure Sentinel に接続します。
 
-1. データ コネクタ タブで、リストから「**Azure Active Directory Identity Protection**」コネクタを選択します。
+1. データ コネクタ タブで、リストから 「**Azure Active Directory Identity Protection**」 コネクタを選択します。
 
 2. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
 
 3. 「構成」 領域から 「**接続**」 ボタンを選択します。
 
-### タスク 4: Azure Directory コネクタを接続する
+### タスク 4: Azure Defender コネクタを接続する
 
-このタスクでは、Azure Directory コネクタを接続します。
+このタスクでは、Azure Defender コネクタを接続します。
 
-1. データ コネクタ タブで、リストから「**Azure Defender**」コネクタを選択します。
+1. データ コネクタ タブで、リストから 「**Azure Defender**」 コネクタを選択します。
 
 2. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
 
@@ -58,41 +58,41 @@
 
 4. 「インシデントの作成 - 推奨!」 領域で、「**有効にする**」 を選択します。
 
-### タスク 5: Microsoft Cloud AppSecurityコネクタを接続する。
+### タスク 5: Microsoft Cloud App Security コネクタを接続する。
 
-このタスクでは、Microsoft Cloud App Security コネクタを接続します。
+このタスクでは、Microsoft Cloud App Security コネクタをに接続します。
 
-1. データ コネクタ タブで、リストから「**Microsoft Cloud App Security**」コネクタを選択します。
+1. データ コネクタ タブで、リストから 「**Microsoft Cloud App Security**」 コネクタを選択します。
 
 2. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
 
-3. 「** アラート**」 を選択し、「 ** 変更の適用 **」 を選択します。
+3. 「**アラート**」 を選択し、「**変更の適用**」 を選択します。
 
 ### タスク 6: Microsoft Defender for Office 365 に接続する
 
 このタスクでは、Microsoft Defender for Office 365 コネクタを接続します。
 
-1. データ コネクタ タブで、リストから「**Microsoft Defender for Office 365**」コネクタを選択します。
+1. データ コネクタ タブで、リストから 「**Microsoft Defender for Office 365**」 コネクタを選択します。
 
 2. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
 
 3. 構成領域で、「**接続**」を選択します。
 
-### タスク 7: Microsoft Defender for forIdentity コネクタに接続する
+### タスク 7: Microsoft Defender for Identity コネクタに接続する
 
 このタスクでは、Microsoft Defender for Identity コネクタ確認します。
 
-1. データ コネクタ タブで、リストから「**Microsoft Defender for Identity**」コネクタを選択します。
+1. データ コネクタ タブで、リストから 「**Microsoft Defender for Identity**」 コネクタを選択します。
 
 2. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
 
-3. 接続オプションを確認します。接続しない。これは情報提供のみを目的としています。
+3. 接続オプションを確認しますが、接続はしません。画面の確認だけを行ってください。
 
-### タスク 8: Microsoft Defender for Endpointコネクタに接続する
+### タスク 8: Microsoft Defender for Endpoint コネクタに接続する
 
 このタスクでは、Microsoft Defender for Endpoint コネクタを接続します。
 
-1. データ コネクタ タブで、リストから「**Microsoft Defender for Endpoint**」コネクタを選択します。
+1. データ コネクタ タブで、リストから 「**Microsoft Defender for Endpoint**」 コネクタを選択します。
 
 2. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
 
@@ -102,12 +102,12 @@
 
 このタスクでは、Microsoft 365 Directory コネクタを接続します。
 
-1. データ コネクタ タブで、リストから「**Microsoft 365 Defender**」コネクタを選択します。
+1. データ コネクタ タブで、リストから 「**Microsoft 365 Defender**」 コネクタを選択します。
 
 2. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
 
-3. Microsoft Defender for Endpointのすべてのチェックボックスを選択します。
+3. Microsoft Defender for Endpoint のすべてのチェックボックスを選択します。
 
-4. **「変更の適用」**を選択します。
+4. 「**変更の適用**」を選択します。
 
 ## 演習 2 に進みます。
