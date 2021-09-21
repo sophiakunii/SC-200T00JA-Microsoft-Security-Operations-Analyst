@@ -2,7 +2,7 @@
 
 ## ラボ シナリオ
 
-あなたは Azure Sentinel を実装済みの会社で働いているセキュリティ オペレーションアナリストです。組織内のさまざまなデータ ソースからのログ データを接続する方法について学習する必要があります。組織には、Microsoft 365、Microsoft 365 Defender、Azure リソース、Azure 以外の仮想マシン、ネットワーク アプライアンスからのデータがあります。
+あなたは Azure Sentinel を実装した企業で働いているセキュリティ オペレーションアナリストです。組織内の多くのデータ ソースからのログ データを接続する方法について学習する必要があります。組織には、Microsoft 365、Microsoft 365 Defender、Azure リソース、Azure 以外の仮想マシン、ネットワーク アプライアンスからのデータがあります。
 
 あなたは、Azure Sentinel データ コネクタを使用して、さまざまなソースからのログ データを統合することを計画しています。組織の各データ ソースを適切な Azure Sentinel データ コネクタにマップする管理用のコネクタ計画を作成する必要があります。
 
@@ -14,9 +14,9 @@
 
 1. 管理者として WIN1 仮想マシンにログインします。パスワードは **Pa55w.rd** です。  
 
-2. ブラウザを開き、新しい Microsoft Edge ブラウザを検索、ダウンロード、およびインストールします。新しい Edge ブラウザーを起動します。
+2. Microsoft Edge ブラウザーを開きます。
 
-3. Edge ブラウザーで Azure ポータルに移動します https://portal.azure.com
+3. Microsoft Edgeブラウザーで Azure ポータルに移動します https://portal.azure.com。
 
 4. **サインイン**ダイアログボックスで、ラボ ホスティング プロバイダーから提供された**テナントの電子メール**アカウントをコピーして貼り付け、「**次へ**」 を選択します。
 
@@ -28,7 +28,7 @@
 
 ### タスク 2: Azure Active Directory コネクタを接続する
 
-このタスクでは、Azure アクティビティ データ コネクタを接続します。
+このタスクでは、Azure Active Directory コネクタを Azure Sentinel に接続します。
 
 1. 構成領域で、 「**データコネクタ**」を選択します。  データ コネクタ ページで、リストから **Azure Active Directory** タイルを選択します。
 
@@ -38,13 +38,13 @@
 
 ### タスク 3: Azure Active Directory Identity Protection コネクタを接続する
 
-このタスクでは、Azure Active Directory Identity Protection コネクタを接続します。
+このタスクでは、Azure Active Directory Identity Protection コネクタを Azure Sentinel に接続します。
 
 1. データ コネクタ タブで、リストから 「**Azure Active Directory Identity Protection**」 コネクタを選択します。
 
 2. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
 
-3. 「**接続** 」ボタンを選択します。
+3. 「構成」 領域から 「**接続**」 ボタンを選択します。
 
 ### タスク 4: Azure Defender コネクタを接続する
 
@@ -54,7 +54,9 @@
 
 2. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
 
-3. サブスクリプションを選択し、「接続」を有効にします。
+3. 「サブスクリプション」 の下の 「構成」 領域で、Azure サブスクリプションを選択します。
+
+4. 「インシデントの作成 - 推奨!」 領域で、「**有効にする**」 を選択します。
 
 ### タスク 5: Microsoft Cloud App Security コネクタを接続する。
 
@@ -74,11 +76,11 @@
 
 2. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
 
-3. 「**接続**」を選択します。
+3. 構成領域で、「**接続**」を選択します。
 
 ### タスク 7: Microsoft Defender for Identity コネクタに接続する
 
-このタスクでは、Microsoft Defender for Identity コネクタを接続します。
+このタスクでは、Microsoft Defender for Identity コネクタ確認します。
 
 1. データ コネクタ タブで、リストから 「**Microsoft Defender for Identity**」 コネクタを選択します。
 
@@ -92,9 +94,9 @@
 
 1. データ コネクタ タブで、リストから 「**Microsoft Defender for Endpoint**」 コネクタを選択します。
 
-2. コネクタ情報ブレードで「コネクタページを開く」を選択します。
+2. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
 
-3. 「**接続**」を選択します。
+3. 構成領域で、「**接続**」を選択します。
 
 ### タスク 9: Microsoft 365 Defender コネクタを接続する
 
