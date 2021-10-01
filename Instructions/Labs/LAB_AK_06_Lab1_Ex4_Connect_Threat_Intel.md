@@ -34,4 +34,6 @@
 
 フィッシング URL は pul lされ、ThreatIntelligenceIndicatorテーブルを居住させます。 
 
+**注:** 追加のコレクションについては、ブラウザーで https://limo.anomali.com/api/v1/taxii2/feeds/collections/ を開き、使用可能なさまざまな ID を確認してください。
+
 ## これでラボは完了です。
