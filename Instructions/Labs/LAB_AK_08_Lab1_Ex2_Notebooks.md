@@ -1,61 +1,61 @@
-ï»¿# ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ« 8 - ãƒ©ãƒœ 1 - æ¼”ç¿’ 2 - Azure Sentinel ã§ãƒŽãƒ¼ãƒˆãƒ–ãƒƒã‚¯ã‚’ä½¿ç”¨ã—ãŸè„…å¨æœç´¢
+# ƒ‚ƒWƒ…[ƒ‹ 8 - ƒ‰ƒ{ 1 - ‰‰K 2 - Azure Sentinel ‚Åƒm[ƒgƒuƒbƒN‚ðŽg—p‚µ‚½‹ºˆÐ‘{õ
 
-## ãƒ©ãƒœ ã‚·ãƒŠãƒªã‚ª
+## ƒ‰ƒ{ ƒVƒiƒŠƒI
 
-ã‚ãªãŸã¯ Azure Sentinel ã‚’å®Ÿè£…ã—ãŸä¼æ¥­ã§åƒã„ã¦ã„ã‚‹ã‚»ã‚­ãƒ¥ãƒªãƒ†ã‚£ ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚¢ãƒŠãƒªã‚¹ãƒˆã§ã™ã€‚Azure Sentinel Notebooksã‚’ä½¿ã£ãŸè„…å¨æŽ¢ç´¢ã®åˆ©ç‚¹ã‚’èª¿æŸ»ã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚
+‚ ‚È‚½‚Í Azure Sentinel ‚ðŽÀ‘•‚µ‚½Šé‹Æ‚Å“­‚¢‚Ä‚¢‚éƒZƒLƒ…ƒŠƒeƒB ƒIƒyƒŒ[ƒVƒ‡ƒ“ƒAƒiƒŠƒXƒg‚Å‚·BAzure Sentinel Notebooks‚ðŽg‚Á‚½‹ºˆÐ’Tõ‚Ì—˜“_‚ð’²¸‚·‚é•K—v‚ª‚ ‚è‚Ü‚·B
 
-### ã‚¿ã‚¹ã‚¯ 1: ãƒŽãƒ¼ãƒˆãƒ–ãƒƒã‚¯ã®æŽ¢ç´¢
+### ƒ^ƒXƒN 1: ƒm[ƒgƒuƒbƒN‚Ì’Tõ
 
-ã“ã®ã‚¿ã‚¹ã‚¯ã§ã¯ã€Azure Sentinel ã§ãƒŽãƒ¼ãƒˆãƒ–ãƒƒã‚¯ã‚’ä½¿ç”¨ã™ã‚‹æ–¹æ³•ã«ã¤ã„ã¦èª¬æ˜Žã—ã¾ã™ã€‚
+‚±‚Ìƒ^ƒXƒN‚Å‚ÍAAzure Sentinel ‚Åƒm[ƒgƒuƒbƒN‚ðŽg—p‚·‚é•û–@‚É‚Â‚¢‚Äà–¾‚µ‚Ü‚·B
 
-1. ç®¡ç†è€…ã¨ã—ã¦ WIN1 ä»®æƒ³ãƒžã‚·ãƒ³ã«ãƒ­ã‚°ã‚¤ãƒ³ã—ã¾ã™ã€‚ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã¯ **Pa55w.rd** ã§ã™ã€‚  
+1. ŠÇ—ŽÒ‚Æ‚µ‚Ä WIN1 ‰¼‘zƒ}ƒVƒ“‚ÉƒƒOƒCƒ“‚µ‚Ü‚·BƒpƒXƒ[ƒh‚Í **Pa55w.rd** ‚Å‚·B  
 
-2. Edge ãƒ–ãƒ©ã‚¦ã‚¶ãƒ¼ã§ Azure ãƒãƒ¼ã‚¿ãƒ« ã«ç§»å‹•ã—ã¾ã™ã€€https://portal.azure.com
+2. Edge ƒuƒ‰ƒEƒU[‚Å Azure ƒ|[ƒ^ƒ‹ ‚ÉˆÚ“®‚µ‚Ü‚·@https://portal.azure.com
 
-3. **ã‚µã‚¤ãƒ³ã‚¤ãƒ³**ãƒ€ã‚¤ã‚¢ãƒ­ã‚°ãƒœãƒƒã‚¯ã‚¹ã§ã€ãƒ©ãƒœ ãƒ›ã‚¹ãƒ†ã‚£ãƒ³ã‚° ãƒ—ãƒ­ãƒã‚¤ãƒ€ãƒ¼ã‹ã‚‰æä¾›ã•ã‚ŒãŸ**ãƒ†ãƒŠãƒ³ãƒˆã®é›»å­ãƒ¡ãƒ¼ãƒ«** ã‚¢ã‚«ã‚¦ãƒ³ãƒˆã‚’ã‚³ãƒ”ãƒ¼ã—ã¦è²¼ã‚Šä»˜ã‘ã€ã€Œ**æ¬¡ã¸**ã€ã‚’é¸æŠžã—ã¾ã™ã€‚
+3. **ƒTƒCƒ“ƒCƒ“**ƒ_ƒCƒAƒƒOƒ{ƒbƒNƒX‚ÅAƒ‰ƒ{ ƒzƒXƒeƒBƒ“ƒO ƒvƒƒoƒCƒ_[‚©‚ç’ñ‹Ÿ‚³‚ê‚½**ƒeƒiƒ“ƒg‚Ì“dŽqƒ[ƒ‹** ƒAƒJƒEƒ“ƒg‚ðƒRƒs[‚µ‚Ä“\‚è•t‚¯Au**ŽŸ‚Ö**v‚ð‘I‘ð‚µ‚Ü‚·B
 
-4. **ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã®å…¥åŠ›**ãƒ€ã‚¤ã‚¢ãƒ­ã‚° ãƒœãƒƒã‚¯ã‚¹ã§ã€ãƒ©ãƒœ ãƒ›ã‚¹ãƒ†ã‚£ãƒ³ã‚° ãƒ—ãƒ­ãƒã‚¤ãƒ€ãƒ¼ã‹ã‚‰æä¾›ã•ã‚ŒãŸ**ãƒ†ãƒŠãƒ³ãƒˆãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰** ã‚’ã‚³ãƒ”ãƒ¼ã—ã¦è²¼ã‚Šä»˜ã‘ã€ã€Œ**ã‚µã‚¤ãƒ³ã‚¤ãƒ³**ã€ã‚’é¸æŠžã—ã¾ã™ã€‚
+4. **ƒpƒXƒ[ƒh‚Ì“ü—Í**ƒ_ƒCƒAƒƒO ƒ{ƒbƒNƒX‚ÅAƒ‰ƒ{ ƒzƒXƒeƒBƒ“ƒO ƒvƒƒoƒCƒ_[‚©‚ç’ñ‹Ÿ‚³‚ê‚½**ƒeƒiƒ“ƒgƒpƒXƒ[ƒh** ‚ðƒRƒs[‚µ‚Ä“\‚è•t‚¯Au**ƒTƒCƒ“ƒCƒ“**v‚ð‘I‘ð‚µ‚Ü‚·B
 
-5. Azure ãƒãƒ¼ã‚¿ãƒ«ã®æ¤œç´¢ãƒãƒ¼ã« ã€Œ*Sentinel*ã€ ã¨å…¥åŠ›ã—ã€ã€Œ**Azure Sentinel**ã€ ã‚’é¸æŠžã—ã¾ã™ã€‚
+5. Azure ƒ|[ƒ^ƒ‹‚ÌŒŸõƒo[‚É u*Sentinel*v ‚Æ“ü—Í‚µAu**Azure Sentinel**v ‚ð‘I‘ð‚µ‚Ü‚·B
 
-6. Azure Sentinel ãƒ¯ãƒ¼ã‚¯ã‚¹ãƒšãƒ¼ã‚¹ã‚’é¸æŠžã—ã¾ã™ã€‚
+6. Azure Sentinel ƒ[ƒNƒXƒy[ƒX‚ð‘I‘ð‚µ‚Ü‚·B
 
-7. Azure Sentinel ãƒ¯ãƒ¼ã‚¯ã‚¹ãƒšãƒ¼ã‚¹ã§ã€ã€Œ**ãƒŽãƒ¼ãƒˆãƒ–ãƒƒã‚¯**ã€ ã‚’é¸æŠžã—ã¾ã™ã€‚
+7. Azure Sentinel ƒ[ƒNƒXƒy[ƒX‚ÅAu**ƒm[ƒgƒuƒbƒN**v ‚ð‘I‘ð‚µ‚Ü‚·B
 
-8. æ¬¡ã«ã€AzureML ãƒ¯ãƒ¼ã‚¯ã‚¹ãƒšãƒ¼ã‚¹ã‚’é¸æŠžã—ã¾ã™ã€‚ã‚³ãƒžãƒ³ãƒ‰ ãƒãƒ¼ã®ã€Œ**æ–°ã—ã„ AML ãƒ¯ãƒ¼ã‚¯ã‚¹ãƒšãƒ¼ã‚¹ã®ä½œæˆ**ã€ãƒœã‚¿ãƒ³ã‚’é¸æŠžã—ã¾ã™ã€‚
+8. ŽŸ‚ÉAAzureML ƒ[ƒNƒXƒy[ƒX‚ð‘I‘ð‚µ‚Ü‚·BƒRƒ}ƒ“ƒh ƒo[‚Ìƒhƒƒbƒvƒ_ƒEƒ“ ƒƒjƒ…[‚©‚çu**V‚µ‚¢ AML ƒ[ƒNƒXƒy[ƒX‚Ìì¬**v‚ð‘I‘ð‚µ‚Ü‚·B
 
-9. ã€Œã‚µãƒ–ã‚¹ã‚¯ãƒªãƒ—ã‚·ãƒ§ãƒ³ã€ ãƒœãƒƒã‚¯ã‚¹ã§ãŠä½¿ã„ã®ã‚µãƒ–ã‚¹ã‚¯ãƒªãƒ—ã‚·ãƒ§ãƒ³ã‚’é¸æŠžã—ã¾ã™ã€‚
+9. uƒTƒuƒXƒNƒŠƒvƒVƒ‡ƒ“v ƒ{ƒbƒNƒX‚Å‚¨Žg‚¢‚ÌƒTƒuƒXƒNƒŠƒvƒVƒ‡ƒ“‚ð‘I‘ð‚µ‚Ü‚·B
 
-10. ãƒªã‚½ãƒ¼ã‚¹ã‚°ãƒ«ãƒ¼ãƒ—ã§ã€Œ**æ–°è¦ä½œæˆ**ã€ã‚’é¸æŠžã—ã€æ–°ã—ã„ãƒªã‚½ãƒ¼ã‚¹ã‚°ãƒ«ãƒ¼ãƒ—ã®åå‰ã‚’é¸æŠžã—ã¾ã™ã€‚ 
+10. ƒŠƒ\[ƒXƒOƒ‹[ƒv‚Åu**V‹Kì¬**v‚ð‘I‘ð‚µAV‚µ‚¢ƒŠƒ\[ƒXƒOƒ‹[ƒv‚Ì–¼‘O‚ð‘I‘ð‚µ‚Ü‚·B 
 
-11. ãƒ¯ãƒ¼ã‚¯ã‚¹ãƒšãƒ¼ã‚¹ã®è©³ç´° ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã§æ¬¡ã®ä½œæ¥­ã‚’è¡Œã„ã¾ã™ã€‚
-- ãŠä½¿ã„ã®ãƒ¯ãƒ¼ã‚¯ã‚¹ãƒšãƒ¼ã‚¹ã«ä¸€æ„ã®åå‰ã‚’ä»˜ã‘ã¾ã™ã€‚
-- é ˜åŸŸã‚’é¸æŠžã™ã‚‹ï¼ˆãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã§ã¯åˆç†çš„ãªé¸æŠžè‚¢ãŒç”¨æ„ã•ã‚Œã¦ã„ã‚‹ã¯ãšã§ã™ï¼‰ã€‚
-- æ—¢å®šã®ã‚¹ãƒˆãƒ¬ãƒ¼ã‚¸ã‚¢ã‚«ã‚¦ãƒ³ãƒˆã€ã‚­ãƒ¼ãƒœãƒ¼ãƒ«ãƒˆã€ãŠã‚ˆã³ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã‚¤ãƒ³ã‚µã‚¤ãƒˆæƒ…å ±ã‚’ä¿æŒã—ã¾ã™ã€‚ 
-- ã€Œã‚³ãƒ³ãƒ†ãƒŠãƒ¼ ãƒ¬ã‚¸ã‚¹ãƒˆãƒªã€ ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã¯ã€ã€Œ**ãªã—**ã€ ã®ã¾ã¾ã«ã§ãã¾ã™ã€‚
+11. ƒ[ƒNƒXƒy[ƒX‚ÌÚ× ƒZƒNƒVƒ‡ƒ“‚ÅŽŸ‚Ìì‹Æ‚ðs‚¢‚Ü‚·B
+- ‚¨Žg‚¢‚Ìƒ[ƒNƒXƒy[ƒX‚ÉˆêˆÓ‚Ì–¼‘O‚ð•t‚¯‚Ü‚·B
+- —Ìˆæ‚ð‘I‘ð‚·‚éiƒfƒtƒHƒ‹ƒg‚Å‚Í‡—“I‚È‘I‘ðŽˆ‚ª—pˆÓ‚³‚ê‚Ä‚¢‚é‚Í‚¸‚Å‚·jB
+- Šù’è‚ÌƒXƒgƒŒ[ƒWƒAƒJƒEƒ“ƒgAƒL[ƒ{[ƒ‹ƒgA‚¨‚æ‚ÑƒAƒvƒŠƒP[ƒVƒ‡ƒ“ƒCƒ“ƒTƒCƒgî•ñ‚ð•ÛŽ‚µ‚Ü‚·B 
+- uƒRƒ“ƒeƒi[ ƒŒƒWƒXƒgƒŠv ƒIƒvƒVƒ‡ƒ“‚ÍAu**‚È‚µ**v ‚Ì‚Ü‚Ü‚É‚Å‚«‚Ü‚·B
 
-12.	ãƒšãƒ¼ã‚¸ã®ä¸‹éƒ¨ã§ **ã€Œç¢ºèªãŠã‚ˆã³ä½œæˆã€** ã‚’é¸æŠžã—ã¾ã™ã€‚æ¬¡ã«ã€æ¬¡ã®ãƒšãƒ¼ã‚¸ã§ **ã€Œä½œæˆã€** ã‚’é¸æŠžã—ã¾ã™ã€‚ 
+12.	ƒy[ƒW‚Ì‰º•”‚Å **uŠm”F‚¨‚æ‚Ñì¬v** ‚ð‘I‘ð‚µ‚Ü‚·BŽŸ‚ÉAŽŸ‚Ìƒy[ƒW‚Å **uì¬v** ‚ð‘I‘ð‚µ‚Ü‚·B 
 
-**æ³¨:** ãƒ¯ãƒ¼ã‚¯ã‚¹ãƒšãƒ¼ã‚¹ã®å±•é–‹ã«ã¯å°‘ã—æ™‚é–“ãŒã‹ã‹ã‚‹å ´åˆãŒã‚ã‚Šã¾ã™ã€‚ 
+**’:** ƒ[ƒNƒXƒy[ƒX‚Ì“WŠJ‚É‚Í­‚µŽžŠÔ‚ª‚©‚©‚éê‡‚ª‚ ‚è‚Ü‚·B 
 
-13.	ãƒ‡ãƒ—ãƒ­ã‚¤ãŒå®Œäº†ã—ãŸã‚‰ã€æ¬¡ã®æ“ä½œã‚’è¡Œã„ã¾ã™ã€‚Azure Sentinel ãƒãƒ¼ã‚¿ãƒ«ã‚’è¿”ã—ã¾ã™ã€‚
+13.	ƒfƒvƒƒC‚ªŠ®—¹‚µ‚½‚çAŽŸ‚Ì‘€ì‚ðs‚¢‚Ü‚·BAzure Sentinel ƒ|[ƒ^ƒ‹‚ð•Ô‚µ‚Ü‚·B
 
-14. ã€Œ**ãƒŽãƒ¼ãƒˆãƒ–ãƒƒã‚¯**ã€ ã‚’é¸æŠžã—ã¾ã™ã€‚ 
+14. u**ƒm[ƒgƒuƒbƒN**v ‚ð‘I‘ð‚µ‚Ü‚·B 
 
-15. ã€Œ**Azure Sentinel MLãƒŽãƒ¼ãƒˆãƒ–ãƒƒã‚¯ã®ã‚¹ã‚¿ãƒ¼ãƒˆã‚¬ã‚¤ãƒ‰**ã€ã‚’é¸æŠžã—ã¦ã‹ã‚‰ã€ã€Œ**ãƒŽãƒ¼ãƒˆãƒ–ãƒƒã‚¯ã®ä¿å­˜**ã€ãƒœã‚¿ãƒ³ã‚’é¸æŠžã—ã¾ã™ã€‚  ãƒŽãƒ¼ãƒˆãƒ–ãƒƒã‚¯ã®åå‰ã®ãƒãƒƒãƒ—ã‚¢ãƒƒãƒ—ã§ã¯ã€æ—¢å®šã«ã—ã¦ **ã€ŒOKã€** ã‚’é¸æŠžã—ã¾ã™ã€‚
+15. u**Azure Sentinel MLƒm[ƒgƒuƒbƒN‚ÌƒXƒ^[ƒgƒKƒCƒh**v‚ð‘I‘ð‚µ‚Ä‚©‚çAu**ƒm[ƒgƒuƒbƒN ƒeƒ“ƒvƒŒ[ƒg‚Ì•¡»**vƒ{ƒ^ƒ“‚ð‘I‘ð‚µ‚Ü‚·B  ƒm[ƒgƒuƒbƒN‚Ì–¼‘O‚Ìƒ|ƒbƒvƒAƒbƒv‚Å‚ÍAŠù’è‚É‚µ‚Ä **uOKv** ‚ð‘I‘ð‚µ‚Ü‚·B
 
-16. ã€Œ**ä»®æƒ³ãƒžã‚·ãƒ³ ãƒ¢ãƒ¼ãƒ‰ã§èµ·å‹•ã™ã‚‹**ã€ ãƒœã‚¿ãƒ³ã‚’é¸æŠžã—ã¾ã™ã€‚
+16. u**‰¼‘zƒ}ƒVƒ“ ƒ‚[ƒh‚Å‹N“®‚·‚é**v ƒ{ƒ^ƒ“‚ð‘I‘ð‚µ‚Ü‚·B
 
-17.	ç”»é¢ä¸Šéƒ¨ã® **ã‚³ãƒ³ãƒ”ãƒ¥ãƒ¼ãƒ†ã‚£ãƒ³ã‚°ï¼š** ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚»ãƒ¬ã‚¯ã‚¿ãƒ¼ã®æ¨ªã§ã€**æ–°ã—ã„ã‚³ãƒ³ãƒ”ãƒ¥ãƒ¼ãƒ†ã‚£ãƒ³ã‚°**ã® ã€Œ**+**ã€ è¨˜å·ã‚’é¸æŠžã—ã¾ã™ã€‚
+17.	‰æ–Êã•”‚Ì **ƒRƒ“ƒsƒ…[ƒeƒBƒ“ƒOF** ƒCƒ“ƒXƒ^ƒ“ƒXƒZƒŒƒNƒ^[‚Ì‰¡‚ÅA**V‚µ‚¢ƒRƒ“ƒsƒ…[ƒeƒBƒ“ƒO**‚Ì u**+**v ‹L†‚ð‘I‘ð‚µ‚Ü‚·B
 
-18.	ãŠä½¿ã„ã®è¨ˆç®—è¨­å®šã‚’é¸æŠžã—ã¾ã™ã€‚  ã“ã‚Œã¯ãƒ©ãƒœç’°å¢ƒã§ã‚ã‚‹ãŸã‚ã€ä½¿ç”¨å¯èƒ½ãªå°ã•ã„ã‚³ãƒ³ãƒ”ãƒ¥ãƒ¼ãƒ†ã‚£ãƒ³ã‚°ã‚’é¸æŠžã—ã¦ãã ã•ã„ã€‚
+18.	‚¨Žg‚¢‚ÌŒvŽZÝ’è‚ð‘I‘ð‚µ‚Ü‚·B  ‚±‚ê‚Íƒ‰ƒ{ŠÂ‹«‚Å‚ ‚é‚½‚ßAŽg—p‰Â”\‚È¬‚³‚¢ƒRƒ“ƒsƒ…[ƒeƒBƒ“ƒO‚ð‘I‘ð‚µ‚Ä‚­‚¾‚³‚¢B
 
-19.	ãŠä½¿ã„ã®è¨ˆç®—ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã«åå‰ã‚’æŒ‡å®šã—ã€ç”»é¢ä¸‹éƒ¨ã§ **ã€Œä½œæˆã€** ãƒœã‚¿ãƒ³ã‚’é¸æŠžã—ã¾ã™ã€‚  ã“ã‚Œã«ã¯æ•°åˆ†ã‹ã‹ã‚‹å ´åˆãŒã‚ã‚Šã¾ã™ã€‚
+19.	‚¨Žg‚¢‚ÌŒvŽZƒCƒ“ƒXƒ^ƒ“ƒX‚É–¼‘O‚ðŽw’è‚µA‰æ–Ê‰º•”‚Å **uì¬v** ƒ{ƒ^ƒ“‚ð‘I‘ð‚µ‚Ü‚·B  ‚±‚ê‚É‚Í”•ª‚©‚©‚éê‡‚ª‚ ‚è‚Ü‚·B
 
-20.	è¨ˆç®—ãŒå®Œäº†ã—ãŸã‚‰ã€ãƒŽãƒ¼ãƒˆãƒ–ãƒƒã‚¯ã®å³ä¸Šã§ã€ä½¿ç”¨ã™ã‚‹ã‚«ãƒ¼ãƒãƒ«ã‚’é¸æŠžã—ã¾ã™ã€‚
+20.	ŒvŽZ‚ªŠ®—¹‚µ‚½‚çAƒm[ƒgƒuƒbƒN‚Ì‰Eã‚ÅAŽg—p‚·‚éƒJ[ƒlƒ‹‚ð‘I‘ð‚µ‚Ü‚·B
 
-21. å…¥é–€ãƒãƒ¥ãƒ¼ãƒˆãƒªã‚¢ãƒ«ã«å¾“ã£ã¦ãã ã•ã„ã€‚
+21. “ü–åƒ`ƒ…[ƒgƒŠƒAƒ‹‚É]‚Á‚Ä‚­‚¾‚³‚¢B
 
-**æ³¨** ä¸Šè¨˜ã®æ‰‹é †ã‚’å®Œäº†ã—ã¦ãƒŽãƒ¼ãƒˆãƒ–ãƒƒã‚¯ã«ã‚¢ã‚¯ã‚»ã‚¹ã§ããªã„å ´åˆã€ä»£ã‚ã‚Šã«ã“ã‚Œã® GitHub ãƒšãƒ¼ã‚¸ã§æ‰‹é †ã‚’ç¢ºèªã§ãã¾ã™ã€‚  ãƒŽãƒ¼ãƒˆãƒ–ãƒƒã‚¯ãƒ•ã‚¡ã‚¤ãƒ«ã¯ã“ã¡ã‚‰ã§ç¢ºèªã§ãã¾ã™: [Azure Sentinal Notebooks on GitHub](https://github.com/Azure/Azure-Sentinel-Notebooks/blob/8122bca32387d60a8ee9c058ead9d3ab8f4d61e6/A%20Getting%20Started%20Guide%20For%20Azure%20Sentinel%20ML%20Notebooks.ipynb) 
+**’**@ã‹L‚ÌŽè‡‚ðŠ®—¹‚µ‚Äƒm[ƒgƒuƒbƒN‚ÉƒAƒNƒZƒX‚Å‚«‚È‚¢ê‡A‘ã‚í‚è‚É‚±‚ê‚Ì GitHub ƒy[ƒW‚ÅŽè‡‚ðŠm”F‚Å‚«‚Ü‚·B  ƒm[ƒgƒuƒbƒNƒtƒ@ƒCƒ‹‚ð‚±‚±‚Å‚²——‚­‚¾‚³‚¢: [GitHub ã‚Ì Azure Sentinel ƒm[ƒgƒuƒbƒN](https://github.com/Azure/Azure-Sentinel-Notebooks/blob/8122bca32387d60a8ee9c058ead9d3ab8f4d61e6/A%20Getting%20Started%20Guide%20For%20Azure%20Sentinel%20ML%20Notebooks.ipynb) 
 
-## ã“ã‚Œã§ãƒ©ãƒœã¯å®Œäº†ã§ã™ã€‚
+## ‚±‚ê‚Åƒ‰ƒ{‚ÍŠ®—¹‚Å‚·B

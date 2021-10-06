@@ -1,4 +1,4 @@
-﻿# モジュール 2 - ラボ 1 - 演習 1 - Microsoft 365 Defender の確認 
+# モジュール 1 - ラボ 1 - 演習 1 - Microsoft 365 Defender の確認 
 
 ## ラボ シナリオ
 
@@ -10,9 +10,9 @@
 
 1. 管理者として WIN1 仮想マシンにログインします。パスワードは**Pa55w.rd** です。  
 
-2. 以前のラボでインストールしていない場合は、ブラウザーを開き、新しい Microsoft Edge ブラウザーを検索してダウンロードし、インストールします。新しい Edge ブラウザーを起動します。
+2. ブラウザーの Microsoft 365 Defender ポータルにまだアクセスしていない場合。Edge ブラウザーを起動します。
 
-3. Edge ブラウザーで Microsoft Defender セキュリティ センターに進みます (https://security.microsoft.com)
+3. Edge ブラウザーで Microsoft Defender ポータルに進みます (https://security.microsoft.com)。
 
 4. **サインイン** ダイアログボックスで、ラボ ホスティング プロバイダーの提供した管理者ユーザー名のテナント電子メール アカウントをコピーして貼り付け、「**次へ**」 を選択します。
 
