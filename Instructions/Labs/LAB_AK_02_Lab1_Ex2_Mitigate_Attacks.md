@@ -1,21 +1,21 @@
-# ƒ‚ƒWƒ…[ƒ‹ 2 - ƒ‰ƒ{ 1 - ‰‰K 2 - Microsoft Defender for Endpoint ‚ðŽg—p‚µ‚½UŒ‚‚ÌŒyŒ¸
+ï»¿# ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ« 2 - ãƒ©ãƒœ 1 - æ¼”ç¿’ 2 - Microsoft Defender for Endpoint ã‚’ä½¿ç”¨ã—ãŸæ”»æ’ƒã®è»½æ¸›
 
-## ƒ‰ƒ{ ƒVƒiƒŠƒI
+## ãƒ©ãƒœ ã‚·ãƒŠãƒªã‚ª
 
-‚ ‚È‚½‚Í Microsoft Defender for Endpoint ‚ðŽÀ‘•‚µ‚Ä‚¢‚éŠé‹Æ‚Å“­‚­ƒZƒLƒ…ƒŠƒeƒB ƒIƒyƒŒ[ƒVƒ‡ƒ“ ƒAƒiƒŠƒXƒg‚Å‚·B‚ ‚È‚½‚ÌãŽi‚ÍA‚¢‚­‚Â‚©‚ÌƒfƒoƒCƒX‚ðƒIƒ“ƒ{[ƒh‚µ‚ÄAƒZƒLƒ…ƒŠƒeƒB ƒIƒyƒŒ[ƒVƒ‡ƒ“ (SecOps) ƒ`[ƒ€‚Ì‰ž“šŽè‡‚Å•K—v‚È•ÏX‚ÉŠÖ‚·‚éî•ñ‚ð’ñ‹Ÿ‚µ‚æ‚¤‚Æ‚µ‚Ä‚¢‚Ü‚·B
+ã‚ãªãŸã¯ Microsoft Defender for Endpoint ã‚’å®Ÿè£…ã—ã¦ã„ã‚‹ä¼æ¥­ã§åƒãã‚»ã‚­ãƒ¥ãƒªãƒ†ã‚£ ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ ã‚¢ãƒŠãƒªã‚¹ãƒˆã§ã™ã€‚ã‚ãªãŸã®ä¸Šå¸ã¯ã€ã„ãã¤ã‹ã®ãƒ‡ãƒã‚¤ã‚¹ã‚’ã‚ªãƒ³ãƒœãƒ¼ãƒ‰ã—ã¦ã€ã‚»ã‚­ãƒ¥ãƒªãƒ†ã‚£ ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ (SecOps) ãƒãƒ¼ãƒ ã®å¿œç­”æ‰‹é †ã§å¿…è¦ãªå¤‰æ›´ã«é–¢ã™ã‚‹æƒ…å ±ã‚’æä¾›ã—ã‚ˆã†ã¨ã—ã¦ã„ã¾ã™ã€‚
 
-Defender for Endpoint ‚ÌUŒ‚ŠÉ˜a‹@”\‚ðŠm”F‚·‚é‚½‚ßAƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“UŒ‚‚ð 2 ‰ñs‚¢‚Ü‚·B
+Defender for Endpoint ã®æ”»æ’ƒç·©å’Œæ©Ÿèƒ½ã‚’ç¢ºèªã™ã‚‹ãŸã‚ã€ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³æ”»æ’ƒã‚’ 2 å›žè¡Œã„ã¾ã™ã€‚
 
-### ƒ^ƒXƒN 1: ƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“UŒ‚
+### ã‚¿ã‚¹ã‚¯ 1: ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³æ”»æ’ƒ
 
-‚±‚Ìƒ^ƒXƒN‚Å‚ÍAƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“UŒ‚‚ð 2 ‰ñs‚Á‚ÄAMicrosoft Defender for Endpoint ‚Ì‹@”\‚ðŠm”F‚µ‚Ü‚·B
+ã“ã®ã‚¿ã‚¹ã‚¯ã§ã¯ã€ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³æ”»æ’ƒã‚’ 2 å›žè¡Œã£ã¦ã€Microsoft Defender for Endpoint ã®æ©Ÿèƒ½ã‚’ç¢ºèªã—ã¾ã™ã€‚
 
-1. ƒuƒ‰ƒEƒU[‚Å Microsoft 365 Defender ƒ|[ƒ^ƒ‹‚É‚Ü‚¾ƒAƒNƒZƒX‚µ‚Ä‚¢‚È‚¢ê‡‚ÍAƒeƒiƒ“ƒg‚ÌŠÇ—ŽÒ‚Æ‚µ‚ÄƒƒOƒCƒ“‚µ‚Ä‚¢‚é Microsoft 365 Defender ƒ|[ƒ^ƒ‹ (https://security.microsoft.com) ‚ÉƒAƒNƒZƒX‚µ‚Ü‚·B
+1. ãƒ–ãƒ©ã‚¦ã‚¶ãƒ¼ã§ Microsoft 365 Defender ãƒãƒ¼ã‚¿ãƒ«ã«ã¾ã ã‚¢ã‚¯ã‚»ã‚¹ã—ã¦ã„ãªã„å ´åˆã¯ã€ãƒ†ãƒŠãƒ³ãƒˆã®ç®¡ç†è€…ã¨ã—ã¦ãƒ­ã‚°ã‚¤ãƒ³ã—ã¦ã„ã‚‹ Microsoft 365 Defender ãƒãƒ¼ã‚¿ãƒ« (https://security.microsoft.com) ã«ã‚¢ã‚¯ã‚»ã‚¹ã—ã¾ã™ã€‚
 
-2. ƒƒjƒ…[‚©‚çAu**ƒGƒ“ƒhƒ|ƒCƒ“ƒg**v‚Ì‰º‚ÅAu**•]‰¿‚Æƒ`ƒ…[ƒgƒŠƒAƒ‹**v‚ð‘I‘ð‚µA¶‘¤‚©‚çu**ƒ`ƒ…[ƒgƒŠƒAƒ‹‚ÆƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“**v‚ð‘I‘ð‚µ‚Ü‚·B
+2. ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‹ã‚‰ã€ã€Œ**ã‚¨ãƒ³ãƒ‰ãƒã‚¤ãƒ³ãƒˆ**ã€ã®ä¸‹ã§ã€ã€Œ**è©•ä¾¡ã¨ãƒãƒ¥ãƒ¼ãƒˆãƒªã‚¢ãƒ«**ã€ã‚’é¸æŠžã—ã€å·¦å´ã‹ã‚‰ã€Œ**ãƒãƒ¥ãƒ¼ãƒˆãƒªã‚¢ãƒ«ã¨ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³**ã€ã‚’é¸æŠžã—ã¾ã™ã€‚
 
-3. u**ƒ`ƒ…[ƒgƒŠƒAƒ‹**vƒ^ƒu‚ð‘I‘ð‚µA*Ž©“®’²¸@(ƒoƒbƒNƒhƒA)* ‚Æ‚¢‚¤ƒ^ƒCƒgƒ‹‚ÌƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‚Æ*Ž©“®’²¸ (ƒtƒ@ƒCƒ‹ƒŒƒXUŒ‚)* ‚Æ‚¢‚¤ƒ^ƒCƒgƒ‹‚Ìƒ`ƒ…[ƒgƒŠƒAƒ‹‚ðŠ®—¹‚µ‚Ü‚·BƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‚ðŽÀs‚·‚é‚½‚ß‚ÌŽè‡‚ðŠÜ‚Þu**ƒ`ƒ…[ƒgƒŠƒAƒ‹‚ð“Ç‚Þ**v‚ð‘I‘ð‚µ‚ÄAƒ`ƒ…[ƒgƒŠƒAƒ‹‚ÌƒhƒLƒ…ƒƒ“ƒg‚ð“Ç‚Ý‚Ü‚·B 
+3. ã€Œ**ãƒãƒ¥ãƒ¼ãƒˆãƒªã‚¢ãƒ«**ã€ã‚¿ãƒ–ã‚’é¸æŠžã—ã€*è‡ªå‹•èª¿æŸ»ã€€(ãƒãƒƒã‚¯ãƒ‰ã‚¢)* ã¨ã„ã†ã‚¿ã‚¤ãƒˆãƒ«ã®ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã¨*è‡ªå‹•èª¿æŸ» (ãƒ•ã‚¡ã‚¤ãƒ«ãƒ¬ã‚¹æ”»æ’ƒ)* ã¨ã„ã†ã‚¿ã‚¤ãƒˆãƒ«ã®ãƒãƒ¥ãƒ¼ãƒˆãƒªã‚¢ãƒ«ã‚’å®Œäº†ã—ã¾ã™ã€‚ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚’å®Ÿè¡Œã™ã‚‹ãŸã‚ã®æ‰‹é †ã‚’å«ã‚€ã€Œ**ãƒãƒ¥ãƒ¼ãƒˆãƒªã‚¢ãƒ«ã‚’èª­ã‚€**ã€ã‚’é¸æŠžã—ã¦ã€ãƒãƒ¥ãƒ¼ãƒˆãƒªã‚¢ãƒ«ã®ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã‚’èª­ã¿ã¾ã™ã€‚ 
 
-**Œx** ‚±‚±‚Å‚ÌƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‚Æƒ`ƒ…[ƒgƒŠƒAƒ‹‚ÍAŽÀ‘H‚ð’Ê‚µ‚ÄŠw‚Ô‚½‚ß‚Ì—D‚ê‚½î•ñŒ¹‚Å‚·B  ƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‚Æƒ`ƒ…[ƒgƒŠƒAƒ‹‚ÍAƒ|[ƒ^ƒ‹‚Å’èŠú“I‚É’Ç‰Á‚¨‚æ‚Ñ•ÒW‚³‚ê‚Ä‚¢‚Ü‚·B  ‚½‚¾‚µA‚±‚ê‚ç‚ÌƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‚Æƒ`ƒ…[ƒgƒŠƒAƒ‹‚Ìˆê•”‚ÍA‚±‚ÌƒgƒŒ[ƒjƒ“ƒOƒR[ƒX—p‚ÉÝŒv‚³‚ê‚½ƒ‰ƒ{‚ÌƒpƒtƒH[ƒ}ƒ“ƒX‚ð–W‚°‚é‰Â”\«‚ª‚ ‚è‚Ü‚·B  ƒR[ƒX‚Å’ñ‹Ÿ‚³‚ê‚é Azure ƒeƒiƒ“ƒg‚ðŽg—p‚·‚éê‡‚ÍA‚±‚Ìƒ‰ƒ{‚Å’ñ‹Ÿ‚³‚ê‚Ä‚¢‚éŽè‡‚Å„§‚³‚ê‚Ä‚¢‚éƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‚Æƒ`ƒ…[ƒgƒŠƒAƒ‹‚Ì‚Ý‚ðŽÀs‚µ‚Ä‚­‚¾‚³‚¢B  ‚±‚Ìƒeƒiƒ“ƒg‚Å‚±‚ÌƒgƒŒ[ƒjƒ“ƒO ƒR[ƒX‚ªŠ®—¹‚µ‚½*Œã*A‘¼‚ÌƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‚âƒ`ƒ…[ƒgƒŠƒAƒ‹‚ðŽÀs‚Å‚«‚Ü‚·B
+**è­¦å‘Š** ã“ã“ã§ã®ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã¨ãƒãƒ¥ãƒ¼ãƒˆãƒªã‚¢ãƒ«ã¯ã€å®Ÿè·µã‚’é€šã—ã¦å­¦ã¶ãŸã‚ã®å„ªã‚ŒãŸæƒ…å ±æºã§ã™ã€‚  ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã¨ãƒãƒ¥ãƒ¼ãƒˆãƒªã‚¢ãƒ«ã¯ã€ãƒãƒ¼ã‚¿ãƒ«ã§å®šæœŸçš„ã«è¿½åŠ ãŠã‚ˆã³ç·¨é›†ã•ã‚Œã¦ã„ã¾ã™ã€‚  ãŸã ã—ã€ã“ã‚Œã‚‰ã®ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã¨ãƒãƒ¥ãƒ¼ãƒˆãƒªã‚¢ãƒ«ã®ä¸€éƒ¨ã¯ã€ã“ã®ãƒˆãƒ¬ãƒ¼ãƒ‹ãƒ³ã‚°ã‚³ãƒ¼ã‚¹ç”¨ã«è¨­è¨ˆã•ã‚ŒãŸãƒ©ãƒœã®ãƒ‘ãƒ•ã‚©ãƒ¼ãƒžãƒ³ã‚¹ã‚’å¦¨ã’ã‚‹å¯èƒ½æ€§ãŒã‚ã‚Šã¾ã™ã€‚  ã‚³ãƒ¼ã‚¹ã§æä¾›ã•ã‚Œã‚‹ Azure ãƒ†ãƒŠãƒ³ãƒˆã‚’ä½¿ç”¨ã™ã‚‹å ´åˆã¯ã€ã“ã®ãƒ©ãƒœã§æä¾›ã•ã‚Œã¦ã„ã‚‹æ‰‹é †ã§æŽ¨å¥¨ã•ã‚Œã¦ã„ã‚‹ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã¨ãƒãƒ¥ãƒ¼ãƒˆãƒªã‚¢ãƒ«ã®ã¿ã‚’å®Ÿè¡Œã—ã¦ãã ã•ã„ã€‚  ã“ã®ãƒ†ãƒŠãƒ³ãƒˆã§ã“ã®ãƒˆãƒ¬ãƒ¼ãƒ‹ãƒ³ã‚° ã‚³ãƒ¼ã‚¹ãŒå®Œäº†ã—ãŸ*å¾Œ*ã€ä»–ã®ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚„ãƒãƒ¥ãƒ¼ãƒˆãƒªã‚¢ãƒ«ã‚’å®Ÿè¡Œã§ãã¾ã™ã€‚
 
-## ‚±‚ê‚Åƒ‰ƒ{‚ÍŠ®—¹‚Å‚·B
+## ã“ã‚Œã§ãƒ©ãƒœã¯å®Œäº†ã§ã™ã€‚
