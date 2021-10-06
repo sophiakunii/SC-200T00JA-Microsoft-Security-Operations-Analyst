@@ -55,7 +55,7 @@
 
 5. ダウンロードされた zip ファイルをローカル フォルダーに抽出します (［ドキュメント］ フォルダーなど)。
 
-6. 抽出されたファイル (**WindowsDefenderATPLocalOnboardingScript.cmd**) を右クリックし「**管理者として実行**」 を選択します。  Windows SmartScreen によって「WindowsによってPCが保護されました**」が表示されたら「**詳細情報**」をクリックして「**実行**」 を選択します。
+6. 抽出されたファイル (**WindowsDefenderATPLocalOnboardingScript.cmd**) を右クリックし「**管理者として実行**」 を選択します。  Windows SmartScreen によって「**WindowsによってPCが保護されました**」が表示されたら「**詳細情報**」をクリックして「**実行**」 を選択します。
 
 **注** 既定で、ZIPファイルは 「c:\users\admin\downloads」 ディレクトリにあります。
     
