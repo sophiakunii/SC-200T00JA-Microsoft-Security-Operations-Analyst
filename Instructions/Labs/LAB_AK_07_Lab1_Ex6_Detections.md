@@ -1,63 +1,63 @@
-# ���W���[�� 7 - ���{ 1 - ���K 6 - ���o���쐬����
+﻿# モジュール 7 - ラボ 1 - 演習 6 - 検出を作成する
 
-### �^�X�N 1: Sysmon �ɂ��U��1�̌��o
+### タスク 1: Sysmon による攻撃1の検出
 
-���̃^�X�N�ł́A�Z�L�����e�B�C�x���g�R�l�N�^�� Sysmon ���C���X�g�[������Ă���z�X�g�ōU�� 1 �̌��o���쐬���܂��B
+このタスクでは、セキュリティイベントコネクタと Sysmon がインストールされているホストで攻撃 1 の検出を作成します。
 
-���̍U���ɂ��A�N�����Ɏ��s����郌�W�X�g���L�[���쐬����܂��B  
+この攻撃により、起動時に実行されるレジストリキーが作成されます。  
 ```Command
 REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "SOC Test" /t REG_SZ /F /D "C:\temp\startup.bat"
 ```
 
-1. �Ǘ��҂Ƃ��� WIN1 ���z�}�V���Ƀ��O�C�����܂��B�p�X���[�h�� **Pa55w.rd** �ł��B  
+1. 管理者として WIN1 仮想マシンにログインします。パスワードは **Pa55w.rd** です。  
 
-2. Edge �u���E�U�[�� Azure �|�[�^���Ɉړ����܂� https://portal.azure.com
+2. Edge ブラウザーで Azure ポータルに移動します https://portal.azure.com
 
-3. **�T�C���C��**�_�C�A���O�{�b�N�X�ŁA���{�̃z�X�e�B���O�v���o�C�_�[����񋟂��ꂽ�Ǘ��җp��**�e�i���g�d�q���[��**�A�J�E���g���R�s�[���ē\��t���A**����**��I�����܂��B
+3. **サインイン**ダイアログボックスで、ラボのホスティングプロバイダーから提供された管理者用の**テナント電子メール**アカウントをコピーして貼り付け、**次へ**を選択します。
 
-4. **�p�X���[�h�̓���**�_�C�A���O �{�b�N�X�ŁA���{ �z�X�e�B���O �v���o�C�_�[����񋟂��ꂽ�Ǘ��җp��**�e�i���g�p�X���[�h** ���R�s�[���ē\��t���A**�T�C���C��**��I�����܂��B
+4. **パスワードの入力**ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された管理者用の**テナントパスワード** をコピーして貼り付け、**サインイン**を選択します。
 
-5. Azure �|�[�^���̌����o�[�� �u*Sentinel*�v �Ɠ��͂��A�u**Azure Sentinel**�v ��I�����܂��B
+5. Azure ポータルの検索バーに 「*Sentinel*」 と入力し、「**Azure Sentinel**」 を選択します。
 
-6. ��قǍ쐬���� Azure Sentinel ���[�N�X�y�[�X��I�����܂��B
+6. 先ほど作成した Azure Sentinel ワークスペースを選択します。
 
-7. ��ʃZ�N�V�������� **Logs** ��I�����܂��B
+7. 一般セクションから **Logs** を選択します。
 
-8. �܂��A�f�[�^���ۑ�����Ă���ꏊ���m�F����K�v������܂��B�U�����s�����΂���Ȃ̂�  ���O�̎��Ԕ͈͂�**�ߋ� 24 ����**�ɐݒ肵�܂��B
+8. まず、データが保存されている場所を確認する必要があります。攻撃を行ったばかりなので  ログの時間範囲を**過去 24 時間**に設定します。
 
-9. ���� KQL �X�e�[�g�����g�����s���܂�
+9. 次の KQL ステートメントを実行します
 
 ```KQL
 search "temp\\startup.bat"
 ```
 
-10. ���ʂ́A3�̈قȂ�e�[�u���ɂ��Ď����Ă��܂��B
+10. 結果は、3つの異なるテーブルについて示しています。
     - DeviceProcessEvents
     - DeviceRegistryEvents
     - Event
 
-    *�f�o�C�X* �e�[�u���́ADefender for Endpoint (�f�[�^�R�l�N�^ - Microsoft 365 Defender) ����̂��̂ł��B  *�C�x���g*�́A�f�[�^ �R�l�N�^�̃Z�L�����e�B �C�x���g����̂��̂ł��B 
+    *デバイス* テーブルは、Defender for Endpoint (データコネクタ - Microsoft 365 Defender) からのものです。  *イベント*は、データ コネクタのセキュリティ イベントからのものです。 
 
-    Sysmon �� Defender for Endpoint �� 2 �̈قȂ�\�[�X����f�[�^����M���Ă��邽�߁A��Ō����ł��� 2 �� KQL �X�e�[�g�����g���쐬����K�v������܂��B  �ŏ��̒����ł́A���ꂼ����ʂɊm�F���Ă����܂��B
+    Sysmon と Defender for Endpoint の 2 つの異なるソースからデータを受信しているため、後で結合できる 2 つの KQL ステートメントを作成する必要があります。  最初の調査では、それぞれを個別に確認していきます。
 
-    **��:** �܂�ɁA�f�[�^�̓ǂݍ��݃v���Z�X�̓ǂݍ��݂ɒʏ�������Ԃ�������ꍇ������܂��B  ���̏ꍇ�A�e�[�u�����N�G���ɐ����ԕ\������Ȃ����Ƃ�����܂��B
+    **注:** まれに、データの読み込みプロセスの読み込みに通常よりも時間がかかる場合があります。  その場合、テーブルがクエリに数時間表示されないことがあります。
 
-11. �ŏ��̃f�[�^�\�[�X�́AWindows �z�X�g����� Sysmon �ł��B  �ȉ��� KQL �X�e�[�g�����g�����s���܂��B
+11. 最初のデータソースは、Windows ホストからの Sysmon です。  以下の KQL ステートメントを実行します。
 
 ```KQL
 search in (Event) "temp\\startup.bat"
 ```
-���ʂ́A�C�x���g�e�[�u���ɑ΂��Ă̂ݕ\�������悤�ɂȂ�܂����B  
+結果は、イベントテーブルに対してのみ表示されるようになりました。  
 
-12. �s��W�J���āA���R�[�h�Ɋ֘A���邷�ׂĂ̗��\�����܂��B  EventData �� ParameterXml �Ȃǂ̂������̃t�B�[���h�ɂ́A�\�����f�[�^�Ƃ��ĕۑ����ꂽ�����̃f�[�^���ڂ�����܂��B  ����ɂ��A����̃t�B�[���h�ł̃N�G��������ɂȂ�܂��B  
+12. 行を展開して、レコードに関連するすべての列を表示します。  EventData や ParameterXml などのいくつかのフィールドには、構造化データとして保存された複数のデータ項目があります。  これにより、特定のフィールドでのクエリが困難になります。  
 
-13. ���ɁA�e�s�̃f�[�^����͂��� KQL �X�e�[�g�����g���쐬���āA�Ӗ��̂���t�B�[���h���쐬����K�v������܂��B  GitHub �� Azure Sentinel �R�~���j�e�B�ł́AParsers �t�H���_�[�� Parsers �̗Ⴊ��������܂��B  �u���E�U�[�ŐV�����^�u���J���Ahttps://github.com/Azure/Azure-Sentinel �Ɉړ����܂�
+13. 次に、各行のデータを解析する KQL ステートメントを作成して、意味のあるフィールドを作成する必要があります。  GitHub の Azure Sentinel コミュニティでは、Parsers フォルダーに Parsers の例が多数あります。  ブラウザーで新しいタブを開き、https://github.com/Azure/Azure-Sentinel に移動します
 
-14. **Parsers**�t�H���_�[��I�����A���� **Sysmon** �t�H���_�[��I�����܂��B  �ȉ��̂��̂�������͂��ł��BAzure-Sentinel/Parsers/Sysmon/Sysmon-v12.0.txt
+14. **Parsers**フォルダーを選択し、次に **Sysmon** フォルダーを選択します。  以下のものが見えるはずです。Azure-Sentinel/Parsers/Sysmon/Sysmon-v12.0.txt
 
-15. Sysmon-v12.0.txt �t�@�C����I�����m�F���܂��B
+15. Sysmon-v12.0.txt ファイルを選択し確認します。
 
-�t�@�C���̐擪�ɁAEvent �e�[�u�����N�G�����AEventData �Ƃ������O�̕ϐ��Ɋi�[���� Let �X�e�[�g�����g���\������܂��B
+ファイルの先頭に、Event テーブルをクエリし、EventData という名前の変数に格納する Let ステートメントが表示されます。
 
 
 ```KQL
@@ -70,7 +70,7 @@ let EventData = Event
 | project-away EventData, EvData  ;
 ```
 
-�t�@�C���̂���ɉ��ɁAEventID == 13 �𒲂ׁAEventData �ϐ�����͂Ƃ��Ďg�p���Ă���ʂ� let �X�e�[�g�����g������܂��B  
+ファイルのさらに下に、EventID == 13 を調べ、EventData 変数を入力として使用している別の let ステートメントがあります。  
 
 ```KQL
 let SYSMON_REG_SETVALUE_13=()
@@ -84,9 +84,9 @@ let SYSMON_REG_SETVALUE_13=()
     
 };
 ```
-����͗ǂ��X�^�[�g�̂悤�Ɍ����܂��B
+これは良いスタートのように見えます。
 
-16. ��L�̃X�e�[�g�����g���g�p���ēƎ��� KQL �X�e�[�g�����g���쐬���A���ׂẴ��W�X�g���L�[�Z�b�g�l�̍s��\�����܂��B  ���� KQL �N�G�������s���܂��B
+16. 上記のステートメントを使用して独自の KQL ステートメントを作成し、すべてのレジストリキーセット値の行を表示します。  次の KQL クエリを実行します。
 
 ```KQL
 
@@ -105,42 +105,42 @@ Event
 
 ```
 
-   ![�X�N���[���V���b�g](../Media/SC200_sysmon_query1.png)
+   ![スクリーンショット](../Media/SC200_sysmon_query1.png)
 
-17.  ������������������o���[�����쐬�ł��܂����A����KQL�X�e�[�g�����g�́A���̌��o���[����KQL�X�e�[�g�����g�ōė��p�ł���悤�Ɍ����܂��B  �u���O�v�E�B���h�E�ŁA�u**�ۑ�**�v�A�u**�֐��Ƃ��ĕۑ�**�v�̏��ɑI�����܂��B�u�ۑ��v �t���C�A�E�g�ŁA���̂悤�ɓ��͂��Ċ֐���ۑ����܂��B
+17.  ここから引き続き検出ルールを作成できますが、このKQLステートメントは、他の検出ルールのKQLステートメントで再利用できるように見えます。  「ログ」ウィンドウで、「**保存**」、「**関数として保存**」の順に選択します。「保存」 フライアウトで、次のように入力して関数を保存します。
 
-�֐���: Event_Reg_SetValue
-�J�e�S��: Sysmon
+関数名: Event_Reg_SetValue
+カテゴリ: Sysmon
 
 
-18. �V���� �u���O �N�G���v �^�u���J���܂��B�����āA�ȉ��� KQL �X�e�[�g�����g�����s���܂�:
+18. 新しい 「ログ クエリ」 タブを開きます。そして、以下の KQL ステートメントを実行します:
 
 ```KQL
 
 Event_Reg_SetValue
 
 ```
-�݂̃f�[�^���W�ɂ���ẮA�����̍s���󂯎��\��������܂��B  ����͗\������Ă��邱�Ƃł��B  ���̃^�X�N�́A����̃V�i���I�Ƀt�B���^�[�������邱�Ƃł�
+在のデータ収集によっては、多くの行を受け取る可能性があります。  これは予測されていることです。  次のタスクは、特定のシナリオにフィルターをかけることです
 
-19. �ȉ��� KQL �X�e�[�g�����g�����s���܂�:
+19. 以下の KQL ステートメントを実行します:
 
 ```KQL
 
 Event_Reg_SetValue | search "startup.bat"
 
 ```
-����ɂ��A����̃��R�[�h���Ԃ���A�f�[�^���m�F���āA�s�����ʂ��邽�߂ɉ���ύX�ł��邩���m�F�ł��܂�
+これにより、特定のレコードが返され、データを確認して、行を識別するために何を変更できるかを確認できます
 
-20. ���ЃC���e���W�F���X����A���ЃA�N�^�[�� reg.exe ���g�p���ă��W�X�g���L�[��ǉ����Ă��邱�Ƃ��킩��܂��B  �f�B���N�g���� c:\temp. �ł��Bstartup.bat �͕ʂ̖��O�ɂ��邱�Ƃ��ł��܂��B���̃X�N���v�g�����s���܂��B
+20. 脅威インテリジェンスから、脅威アクターが reg.exe を使用してレジストリキーを追加していることがわかります。  ディレクトリは c:\temp. です。startup.bat は別の名前にすることができます。次のスクリプトを実行します。
 
 ```KQL
 Event_Reg_SetValue 
 | where Image contains "reg.exe"
 
 ```
-����͗ǂ��X�^�[�g�ł�  ���ɁAc:\temp �f�B���N�g���̌��ʂ݂̂�Ԃ��K�v������܂��B
+これは良いスタートです  次に、c:\temp ディレクトリの結果のみを返す必要があります。
 
-21. �����āA�ȉ��� KQL �X�e�[�g�����g�����s���܂�:
+21. 続いて、以下の KQL ステートメントを実行します:
 
 ```KQL
 Event_Reg_SetValue 
@@ -148,9 +148,9 @@ Event_Reg_SetValue
 | where Details startswith "C:\\TEMP"
 ```
 
-����͗ǂ����o���[���̂悤�Ɍ����܂��B  
+これは良い検出ルールのように見えます。  
 
-22. �A���[�g�ɂ��Ăł��邾�������̃R���e�L�X�g��񋟂��邱�Ƃɂ��A�Z�L�����e�B�^�p�A�i���X�g���x�����邱�Ƃ��d�v�ł��B����ɂ́A�����O���t�Ŏg�p����G���e�B�e�B�̓��e���܂܂�܂��B  ���̃N�G�������s���܂��B
+22. アラートについてできるだけ多くのコンテキストを提供することにより、セキュリティ運用アナリストを支援することが重要です。これには、調査グラフで使用するエンティティの投影が含まれます。  次のクエリを実行します。
 
 ```KQL
 Event_Reg_SetValue 
@@ -160,86 +160,86 @@ Event_Reg_SetValue
 
 ```
 
-23. �K�؂Ȍ��o���[�����ł����̂ŁA�N�G���̂��郍�O�E�B���h�E�ŁA�R�}���h �o�[�� **�u�V�����A���[�g ���[���v** ��I�����A**�uAzure Sentinel �A���[�g�̍쐬�v** ��I�����܂��B
+23. 適切な検出ルールができたので、クエリのあるログウィンドウで、コマンド バーの **「新しいアラート ルール」** を選択し、**「Azure Sentinel アラートの作成」** を選択します。
 
-24. ����ɂ��A�A�i���e�B�N�X���[���E�B�U�[�h���N�����܂��B  �S�ʃ^�u�Ɏ��̂悤�ɓ��͂��܂�
+24. これにより、アナリティクスルールウィザードが起動します。  全般タブに次のように入力します
 
-    ����: Sysmon Startup RegKey
+    氏名: Sysmon Startup RegKey
 
-    ����: Sysmon Startup Regkey in c:\temp
+    説明: Sysmon Startup Regkey in c:\temp
 
-    �^�N�e�B�N�X: �i����
+    タクティクス: 永続化
 
-    �d��x: ��
+    重大度: 高
 
-�u**����: ���[�� ���W�b�N�̐ݒ� >**�v��I�����܂��B
+「**次へ: ルール ロジックの設定 >**」を選択します。
 
-25. �u**���[�� ���W�b�N�̐ݒ�**�v �^�u�ŁA**���[�� �N�G��**�����ɓ��͂���Ă���͂��ł��B 
+25. 「**ルール ロジックの設定**」 タブで、**ルール クエリ**が既に入力されているはずです。 
 
-26. �N�G���X�P�W���[�����O�̏ꍇ�A���̂悤�ɐݒ肵�܂��B
+26. クエリスケジューリングの場合、次のように設定します。
 
-- ������x�N�G�������s����: 5 ��
-- �Ōォ��̃f�[�^�����Ă��������F  1 ��
+- もう一度クエリを実行する: 5 分
+- 最後からのデータを見てください：  1 日
 
-**��** �����f�[�^�ɑ΂��ĈӐ}�I�ɑ����̃C���V�f���g�𐶐����Ă��܂��B  ����ɂ��A���{�͂����̃A���[�g���g�p�ł���悤�ɂȂ�܂��B
+**注** 同じデータに対して意図的に多くのインシデントを生成しています。  これにより、ラボはこれらのアラートを使用できるようになります。
 
-27. �c��̃I�v�V�����͊���l�̂܂܂ɂ��܂��B  �u**����: �C���V�f���g�ݒ� >**�v�{�^����I�����܂��B
+27. 残りのオプションは既定値のままにします。  「**次へ: インシデント設定 >**」ボタンを選択します。
 
-28. �C���V�f���g�ݒ�ɂ́A�ȉ���ݒ肵�܂� 
+28. インシデント設定には、以下を設定します 
 
-- �C���V�f���g�̐ݒ�F �L��
-- �A���[�g �O���[�v�F ����
+- インシデントの設定： 有効
+- アラート グループ： 無効
 
-�u**����: �������� >**�v�{�^����I�����܂��B
+「**次へ: 自動応答 >**」ボタンを選択します。
 
-29. ���������^�u�Ŏ��̂悤�ɐݒ肵�܂��B
+29. 自動応答タブで次のように設定します。
 
-- *PostMessageTeams-OnAlert* ��I�����܂��B
+- *PostMessageTeams-OnAlert* を選択します。
 
-�u**����: ���r���[**�v�{�^����I�����܂��B
+「**次へ: レビュー**」ボタンを選択します。
 
-30. ���r���[�^�u�ŁA**�쐬**��I�����܂��B
+30. レビュータブで、**作成**を選択します。
 
 
-### �^�X�N 2: �G���h�|�C���g�� Defender �ɂ��U��1�̌��o
+### タスク 2: エンドポイントの Defender による攻撃1の検出
 
-���̃^�X�N�ł́AMicrosoft Defender for Endpoint ���\�����ꂽ�z�X�g�ōU��1�̌��o���쐬���܂��B
+このタスクでは、Microsoft Defender for Endpoint が構成されたホストで攻撃1の検出を作成します。
 
-���̍U���ɂ��A�N�����Ɏ��s����郌�W�X�g���L�[���쐬����܂��B  
+この攻撃により、起動時に実行されるレジストリキーが作成されます。  
 ```Command
 REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "SOC Test" /t REG_SZ /F /D "C:\temp\startup.bat"
 ```
 
-1. Azure Sentinel �|�[�^���ŁA�S�ʃZ�N�V��������**���O**��I�����܂��B
+1. Azure Sentinel ポータルで、全般セクションから**ログ**を選択します。
 
-2. �܂��A�f�[�^���ۑ�����Ă���ꏊ���m�F����K�v������܂��B�U�����s�����΂���Ȃ̂�  
+2. まず、データが保存されている場所を確認する必要があります。攻撃を行ったばかりなので  
 
-    ���O�̎��Ԕ͈͂��ߋ� 24 ���Ԃɐݒ肵�܂��B
+    ログの時間範囲を過去 24 時間に設定します。
 
-3. �ȉ��� KQL �X�e�[�g�����g�����s���܂�:
+3. 以下の KQL ステートメントを実行します:
 
 ```KQL
 search "temp\\startup.bat"
 ```
 
-4. ���ʂ́A3�̈قȂ�e�[�u���ɂ��Ď����Ă��܂��B
+4. 結果は、3つの異なるテーブルについて示しています。
     DeviceProcessEvents
     DeviceRegistryEvents
-    �C�x���g
+    イベント
 
-    �f�o�C�X*�e�[�u���́ADefender for Endpoint �i�f�[�^�R�l�N�^-Microsoft 365 Defender�j ����̂��̂ł��B  �C�x���g�́A�f�[�^�R�l�N�^�̃Z�L�����e�B�C�x���g����̂��̂ł��B 
+    デバイス*テーブルは、Defender for Endpoint （データコネクタ-Microsoft 365 Defender） からのものです。  イベントは、データコネクタのセキュリティイベントからのものです。 
 
-    Sysmon �� Defender for Endpoint �� 2 �̈قȂ�\�[�X����f�[�^����M���Ă��邽�߁A  ��Ō����ł��� 2 �� KQL �X�e�[�g�����g���쐬����K�v������܂��B  �������A�ŏ��̒����ł́A���ꂼ����ʂɊm�F���Ă����܂��B
+    Sysmon と Defender for Endpoint の 2 つの異なるソースからデータを受信しているため、  後で結合できる 2 つの KQL ステートメントを作成する必要があります。  しかし、最初の調査では、それぞれを個別に確認していきます。
 
-5. ���̌��o�́ADefender for Endpoint ����̃f�[�^�ɏœ_�𓖂Ă܂��B  �ȉ��� KQL �X�e�[�g�����g�����s���܂�:
+5. この検出は、Defender for Endpoint からのデータに焦点を当てます。  以下の KQL ステートメントを実行します:
 
 ```KQL
 search in (Device*) "temp\\startup.bat"
 ```
 
-6. �e�[�u�� - DeviceRegistryEvents �́A�f�[�^�����łɐ��K������Ă���A�N�G�����ȒP�ɂł���悤�Ɍ����܂��B  �s��W�J���āA���R�[�h�Ɋ֘A���邷�ׂĂ̗��\�����܂��B
+6. テーブル - DeviceRegistryEvents は、データがすでに正規化されており、クエリが簡単にできるように見えます。  行を展開して、レコードに関連するすべての列を表示します。
 
-7. ���ЃC���e���W�F���X����A���ЃA�N�^�[�� reg.exe ���g�p���ă��W�X�g���L�[��ǉ����Ă��邱�Ƃ��킩��܂��B  �f�B���N�g���� c:\temp �ł��Bstartup.bat �͕ʂ̖��O�ɂ��邱�Ƃ��ł��܂��B  ���� KQL �X�e�[�g�����g����͂��܂��B
+7. 脅威インテリジェンスから、脅威アクターが reg.exe を使用してレジストリキーを追加していることがわかります。  ディレクトリは c:\temp です。startup.bat は別の名前にすることができます。  この KQL ステートメントを入力します。
 
 ```KQL
 
@@ -251,9 +251,9 @@ DeviceRegistryEvents
 
 ```
 
-����͗ǂ����o���[���̂悤�Ɍ����܂��B  
+これは良い検出ルールのように見えます。  
 
-8. �A���[�g�ɂ��Ăł��邾�������̃R���e�L�X�g��񋟂��邱�Ƃɂ��A�Z�L�����e�B�I�y���[�V�����Z���^�[�A�i���X�g���x�����邱�Ƃ��d�v�ł��B����ɂ́A�����O���t�Ŏg�p����G���e�B�e�B�̓��e���܂܂�܂��B���̃N�G�������s���܂��B
+8. アラートについてできるだけ多くのコンテキストを提供することにより、セキュリティオペレーションセンターアナリストを支援することが重要です。これには、調査グラフで使用するエンティティの投影が含まれます。次のクエリを実行します。
 
 ```KQL
 DeviceRegistryEvents
@@ -265,80 +265,80 @@ DeviceRegistryEvents
 
 ```
 
-   ![�X�N���[���V���b�g](../Media/SC200_sysmon_query2.png)
+   ![スクリーンショット](../Media/SC200_sysmon_query2.png)
 
-9.  �K�؂Ȍ��o���[�����ł����̂ŁA�N�G���̂��郍�O �E�B���h�E�ŁA�R�}���h �o�[�� **�u�V�����A���[�g ���[���v** ��I�����܂��B  ���ɁA**�uAzure Sentinel �A���[�g�̍쐬�v** ��I�����܂��B
+9.  適切な検出ルールができたので、クエリのあるログ ウィンドウで、コマンド バーの **「新しいアラート ルール」** を選択します。  次に、**「Azure Sentinel アラートの作成」** を選択します。
 
-10. ����ɂ��A�A�i���e�B�N�X���[���E�B�U�[�h���N�����܂��B  �S�ʃ^�u�Ɏ��̂悤�ɓ��͂��܂�
+10. これにより、アナリティクスルールウィザードが起動します。  全般タブに次のように入力します
 
 
-    ����: D4E Startup RegKey
+    氏名: D4E Startup RegKey
 
-    ����: D4E Startup Regkey in c:\temp
+    説明: D4E Startup Regkey in c:\temp
 
-    �^�N�e�B�N�X: �i����
+    タクティクス: 永続化
 
-    �d��x: ��
+    重大度: 高
 
-11. �u**����: ���[�� ���W�b�N��ݒ�@>**�v�{�^����I�����܂��B
+11. 「**次へ: ルール ロジックを設定　>**」ボタンを選択します。
 
-12. �u���[�� ���W�b�N�̐ݒ�v �^�u�ŁA**���[�� �N�G��**�����ɓ��͂���Ă���͂��ł��B
+12. 「ルール ロジックの設定」 タブで、**ルール クエリ**が既に入力されているはずです。
 
-13. �N�G���X�P�W���[�����O�̏ꍇ�A���̂悤�ɐݒ肵�܂��B
+13. クエリスケジューリングの場合、次のように設定します。
 
-- ������x�N�G�������s����: 5 ��
-- �Ōォ��̃f�[�^�����Ă��������F 1 ��
+- もう一度クエリを実行する: 5 分
+- 最後からのデータを見てください： 1 日
 
-**��** �����f�[�^�ɑ΂��ĈӐ}�I�ɑ����̃C���V�f���g�𐶐����Ă��܂��B  ����ɂ��A���{�͂����̃A���[�g���g�p�ł���悤�ɂȂ�܂��B
+**注** 同じデータに対して意図的に多くのインシデントを生成しています。  これにより、ラボはこれらのアラートを使用できるようになります。
 
-14. �c��̃I�v�V�����͊���l�̂܂܂ɂ��܂��B  �u**����: �C���V�f���g�̐ݒ� >**�v��I�����܂��B
+14. 残りのオプションは既定値のままにします。  「**次へ: インシデントの設定 >**」を選択します。
 
-15. �C���V�f���g�ݒ�ɂ́A�ȉ���ݒ肵�܂� 
+15. インシデント設定には、以下を設定します 
 
-- �C���V�f���g�̐ݒ�F �L��
-- �A���[�g �O���[�v�F ����
+- インシデントの設定： 有効
+- アラート グループ： 無効
 
-�u**����: �������� >**�v��I�����܂��B
+「**次へ: 自動応答 >**」を選択します。
 
-16. ���������^�u�Ŏ��̂悤�ɐݒ肵�܂��B
+16. 自動応答タブで次のように設定します。
 
-- PostMessageTeams-OnAlert ��I�����܂��B
-- �u**����: ���r���[**�v ���N���b�N���܂��B
+- PostMessageTeams-OnAlert を選択します。
+- 「**次へ: レビュー**」 をクリックします。
 
-17. �m�F����э쐬 �^�u�ŁA**�쐬** ��I�����܂��B
+17. 確認および作成 タブで、**作成** を選択します。
 
-### �^�X�N 3: SecurityEvent �ɂ��U��2�̌��o
+### タスク 3: SecurityEvent による攻撃2の検出
 
-���̃^�X�N�ł́A�Z�L�����e�B�C�x���g�R�l�N�^�� Sysmon ���C���X�g�[������Ă���z�X�g�ōU��2�̌��o���쐬���܂��B
+このタスクでは、セキュリティイベントコネクタと Sysmon がインストールされているホストで攻撃2の検出を作成します。
 
-���̍U���ɂ��A�V�������[�U�[���쐬����A���̃��[�U�[�����[�J���Ǘ��҂ɒǉ�����܂��B
+この攻撃により、新しいユーザーが作成され、そのユーザーがローカル管理者に追加されます。
 ```Command
 net user theusernametoadd /add
 net user theusernametoadd ThePassword1!
 net localgroup administrators theusernametoadd /add
 ```
 
-1. Azure Sentinel ���j���[�� �S�� �Z�N�V������**���O**��I�����܂��B
+1. Azure Sentinel メニューの 全般 セクションで**ログ**を選択します。
 
-2. �܂��A�f�[�^���ۑ�����Ă���ꏊ���m�F����K�v������܂��B�U�����s�����΂���Ȃ̂�  
+2. まず、データが保存されている場所を確認する必要があります。攻撃を行ったばかりなので  
 
-    ���O�̎��Ԕ͈͂��ߋ� 24 ���Ԃɐݒ肵�܂��B
+    ログの時間範囲を過去 24 時間に設定します。
 
-3. �ȉ��́@KQL�@�X�e�[�g�����g�����s���܂�:
+3. 以下の　KQL　ステートメントを実行します:
 
 ```KQL
 search "administrators"
 ```
 
-4. ���ʂ͎��̕\�������܂��B
-    �C�x���g
+4. 結果は次の表を示します。
+    イベント
     SecurityEvent
 
-5. �ŏ��̃f�[�^�\�[�X�� SecurityEvent �ł��B�����O���[�v�ւ̃����o�[�̒ǉ������ʂ��邽�߂� Windows ���g�p����C�x���g ID �𒲍�����Ƃ������܂����B  ���� EventID �� Event �́A���������T���Ă�����̂ł��B    
+5. 最初のデータソースは SecurityEvent です。特権グループへのメンバーの追加を識別するために Windows が使用するイベント ID を調査するときが来ました。  次の EventID と Event は、私たちが探しているものです。    
 
-4732 - �Z�L�����e�B���L���ȃ��[�J���O���[�v�Ƀ����o�[���ǉ�����܂����B
+4732 - セキュリティが有効なローカルグループにメンバーが追加されました。
 
-���̃X�N���v�g�����s���Ă��܂��B
+次のスクリプトを実行しています。
 
 ```KQL
 SecurityEvent
@@ -347,7 +347,7 @@ SecurityEvent
 
 ```
 
-6. �s��W�J���āA���R�[�h�Ɋ֘A���邷�ׂĂ̗��\�����܂��B  �T���Ă��郆�[�U�[���͕\������܂���B  ���́A���[�U�[����ۑ��������ɁA�Z�L�����e�B���ʎq �iSID�j ���ۑ������Ƃ������Ƃł��B  ����KQL�́ASID���ƍ����āAAdministrators �O���[�v�ɒǉ����ꂽ TargetUserName �Ƀf�[�^����͂��悤�Ƃ��܂��B
+6. 行を展開して、レコードに関連するすべての列を表示します。  探しているユーザー名は表示されません。  問題は、ユーザー名を保存する代わりに、セキュリティ識別子 （SID） が保存されるということです。  次のKQLは、SIDを照合して、Administrators グループに追加された TargetUserName にデータを入力しようとします。
 
 
 ```KQL
@@ -362,13 +362,13 @@ SecurityEvent
 ) on $left.MachId == $right.MachId1, $left.Acct == $right.Acct1 
 
 ```
-����͗ǂ����o���[���̂悤�Ɍ����܂��B  
+これは良い検出ルールのように見えます。  
 
-   ![�X�N���[���V���b�g](../Media/SC200_sysmon_attack3.png)
+   ![スクリーンショット](../Media/SC200_sysmon_attack3.png)
 
-**��:** ���{�Ŏg�p�����f�[�^�Z�b�g�����������߁A���� KQL �͊��҂���錋�ʂ�Ԃ��Ȃ��ꍇ������܂��B
+**注:** ラボで使用されるデータセットが小さいため、この KQL は期待される結果を返さない場合があります。
 
-7. �A���[�g�ɂ��Ăł��邾�������̃R���e�L�X�g��񋟂��邱�Ƃɂ��A�Z�L�����e�B�^�p�A�i���X�g���x�����邱�Ƃ��d�v�ł��B����ɂ́A�����O���t�Ŏg�p����G���e�B�e�B�̓��e���܂܂�܂��B  ���̃N�G�������s���܂��B
+7. アラートについてできるだけ多くのコンテキストを提供することにより、セキュリティ運用アナリストを支援することが重要です。これには、調査グラフで使用するエンティティの投影が含まれます。  次のクエリを実行します。
 
 
 ```KQL
@@ -385,39 +385,39 @@ SecurityEvent
 
 ```
 
-8. �K�؂Ȍ��o���[�����ł����̂ŁA�N�G���̂��郍�O �E�B���h�E�ŁA�R�}���h �o�[�� **�u�V�����A���[�g ���[���v** ��I�����A**�uAzure Sentinel �A���[�g�̍쐬�v** ��I�����܂��B
+8. 適切な検出ルールができたので、クエリのあるログ ウィンドウで、コマンド バーの **「新しいアラート ルール」** を選択し、**「Azure Sentinel アラートの作成」** を選択します。
 
-9. ����ɂ��A�A�i���e�B�N�X���[���E�B�U�[�h���N�����܂��B  �S�ʃ^�u�Ɏ��̂悤�ɓ��͂��܂�
+9. これにより、アナリティクスルールウィザードが起動します。  全般タブに次のように入力します
 
-- ����: SecurityEvents Local Administrators User Add 
-- ����: SecurityEvents Local Administrators User Add 
-- �^�N�e�B�N�X: �����G�X�J���[�V����
-- �d��x: ��
+- 氏名: SecurityEvents Local Administrators User Add 
+- 説明: SecurityEvents Local Administrators User Add 
+- タクティクス: 特権エスカレーション
+- 重大度: 高
 
-�u**����: ���[�� ���W�b�N��ݒ�@>**�v�{�^����I�����܂��B
+「**次へ: ルール ロジックを設定　>**」ボタンを選択します。
 
-10. ���[�����W�b�N�̐ݒ�^�u�ŁA���[���N�G���G���e�B�e�B�ƃ}�b�v�G���e�B�e�B�����ɓ��͂���Ă���K�v������܂��B
+10. ルールロジックの設定タブで、ルールクエリエンティティとマップエンティティが既に入力されている必要があります。
 
-11. �N�G���X�P�W���[�����O�̏ꍇ�A���̂悤�ɐݒ肵�܂��B
+11. クエリスケジューリングの場合、次のように設定します。
 
-- ������x�N�G�������s����: 5 ��
-- �Ōォ��̃f�[�^�����Ă��������F 1 ��
+- もう一度クエリを実行する: 5 分
+- 最後からのデータを見てください： 1 日
 
-**��** �����f�[�^�ɑ΂��ĈӐ}�I�ɑ����̃C���V�f���g�𐶐����Ă��܂��B  ����ɂ��A���{�͂����̃A���[�g���g�p�ł���悤�ɂȂ�܂��B
+**注** 同じデータに対して意図的に多くのインシデントを生成しています。  これにより、ラボはこれらのアラートを使用できるようになります。
 
-12. �c��̃I�v�V�����͊���l�̂܂܂ɂ��܂��B  �u**����: �C���V�f���g�̐ݒ� >**�v��I�����܂��B
+12. 残りのオプションは既定値のままにします。  「**次へ: インシデントの設定 >**」を選択します。
 
-13. �C���V�f���g�ݒ�ɂ́A�ȉ���ݒ肵�܂� 
+13. インシデント設定には、以下を設定します 
 
-- �C���V�f���g�̐ݒ�F �L��
-- �A���[�g �O���[�v�F ����
-- �u**����: �������� >�v��I�����܂��B**
+- インシデントの設定： 有効
+- アラート グループ： 無効
+- 「**次へ: 自動応答 >」を選択します。**
 
-14. ���������^�u�Ŏ��̂悤�ɐݒ肵�܂��B
+14. 自動応答タブで次のように設定します。
 
-- **PostMessageTeams-OnAlert** ��I�����܂��B
-- �u**����: �m�F >**�v�{�^����I�����܂��B
+- **PostMessageTeams-OnAlert** を選択します。
+- 「**次へ: 確認 >**」ボタンを選択します。
 
-15. ���r���[ �^�u�ŁA**�쐬**��I�����܂��B
+15. レビュー タブで、**作成**を選択します。
 
-## ���K 7 �ɐi�݂܂��B
+## 演習 7 に進みます。
