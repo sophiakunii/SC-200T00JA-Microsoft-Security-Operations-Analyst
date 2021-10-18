@@ -8,9 +8,9 @@
 
 このタスクでは、Microsoft 365 セキュリティ ポータルのオプションを確認します。
 
-1. 管理者として WIN1 仮想マシンにログインします。パスワードは**Pa55w.rd** です。  
+1. 管理者として WIN1 仮想マシンにログインします。パスワードは **Pa55w.rd** です。  
 
-2. ブラウザーの Microsoft 365 Defender ポータルにまだアクセスしていない場合。Edge ブラウザーを起動します。
+2. Edge ブラウザーで Microsoft 365 Defender ポータルにまだアクセスしていない場合、Edge ブラウザーを起動します。
 
 3. Edge ブラウザーで Microsoft Defender ポータルに進みます。 (https://security.microsoft.com)
 
