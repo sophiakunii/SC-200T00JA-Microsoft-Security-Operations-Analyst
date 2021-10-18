@@ -12,7 +12,7 @@
 
 2. ブラウザーの Microsoft 365 Defender ポータルにまだアクセスしていない場合。Edge ブラウザーを起動します。
 
-3. Edge ブラウザーで Microsoft Defender ポータルに進みます (https://security.microsoft.com)。
+3. Edge ブラウザーで Microsoft Defender ポータルに進みます。 (https://security.microsoft.com)
 
 4. **サインイン** ダイアログボックスで、ラボ ホスティング プロバイダーの提供した管理者ユーザー名のテナント電子メール アカウントをコピーして貼り付け、「**次へ**」 を選択します。
 
