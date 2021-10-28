@@ -311,7 +311,7 @@ DeviceRegistryEvents
 
 このタスクでは、セキュリティイベントコネクタと Sysmon がインストールされているホストで攻撃2の検出を作成します。
 
-この攻撃により、新しいユーザーが作成され、そのユーザーがローカル管理者に追加されます。
+この攻撃により、新しいユーザーが作成され、そのユーザーがローカル管理者に追加されています。
 ```Command
 net user theusernametoadd /add
 net user theusernametoadd ThePassword1!
@@ -389,9 +389,9 @@ SecurityEvent
 
 9. これにより、アナリティクスルールウィザードが起動します。  全般タブに次のように入力します
 
-- 氏名: SecurityEvents Local Administrators User Add 
+- 名前: SecurityEvents Local Administrators User Add 
 - 説明: SecurityEvents Local Administrators User Add 
-- タクティクス: 特権エスカレーション
+- 方針: Privilege Escalation
 - 重大度: 高
 
 「**次へ: ルール ロジックを設定　>**」ボタンを選択します。
@@ -400,8 +400,8 @@ SecurityEvent
 
 11. クエリスケジューリングの場合、次のように設定します。
 
-- もう一度クエリを実行する: 5 分
-- 最後からのデータを見てください： 1 日
+- クエリの実行間隔: 5 分
+- 次の時間分の過去データを参照します：  1 日
 
 **注** 同じデータに対して意図的に多くのインシデントを生成しています。  これにより、ラボはこれらのアラートを使用できるようになります。
 
@@ -411,12 +411,12 @@ SecurityEvent
 
 - インシデントの設定： 有効
 - アラート グループ： 無効
-- 「**次へ: 自動応答 >」を選択します。**
+ 「**次へ: 自動応答 >」を選択します。**
 
 14. 自動応答タブで次のように設定します。
 
 - **PostMessageTeams-OnAlert** を選択します。
-- 「**次へ: 確認 >**」ボタンを選択します。
+「**次へ: 確認 >**」ボタンを選択します。
 
 15. レビュー タブで、**作成**を選択します。
 
