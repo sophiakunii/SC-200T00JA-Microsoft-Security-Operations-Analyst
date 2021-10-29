@@ -4,7 +4,7 @@
 
 このタスクでは、セキュリティイベントコネクタと Sysmon がインストールされているホストで攻撃 1 の検出を作成します。
 
-この攻撃により、起動時に実行されるレジストリキーが作成されます。  
+この攻撃は、起動時に実行されるレジストリ キーを作成しています。
 ```Command
 REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "SOC Test" /t REG_SZ /F /D "C:\temp\startup.bat"
 ```
@@ -21,7 +21,7 @@ REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "SOC Test" /t RE
 
 6. 先ほど作成した Azure Sentinel ワークスペースを選択します。
 
-7. 一般セクションから **Logs** を選択します。
+7. 全般セクションから **Logs** を選択します。
 
 8. まず、データが保存されている場所を確認する必要があります。攻撃を行ったばかりなので  ログの時間範囲を**過去 24 時間**に設定します。
 
@@ -110,7 +110,7 @@ Event
 17.  ここから引き続き検出ルールを作成できますが、このKQLステートメントは、他の検出ルールのKQLステートメントで再利用できるように見えます。  「ログ」ウィンドウで、「**保存**」、「**関数として保存**」の順に選択します。「保存」 フライアウトで、次のように入力して関数を保存します。
 
 関数名: Event_Reg_SetValue
-カテゴリ: Sysmon
+従来のカテゴリ: Sysmon
 
 
 18. 新しい 「ログ クエリ」 タブを開きます。そして、以下の KQL ステートメントを実行します:
@@ -120,7 +120,7 @@ Event
 Event_Reg_SetValue
 
 ```
-在のデータ収集によっては、多くの行を受け取る可能性があります。  これは予測されていることです。  次のタスクは、特定のシナリオにフィルターをかけることです
+すでにあるデータによっては、多くの行を受け取る可能性があります。  これは予想されていることです。  次のタスクは、特定のシナリオにフィルターをかけることです
 
 19. 以下の KQL ステートメントを実行します:
 
@@ -168,7 +168,7 @@ Event_Reg_SetValue
 
     説明: Sysmon Startup Regkey in c:\temp
 
-    タクティクス: 永続化
+    方針: Persistemce
 
     重大度: 高
 
@@ -178,8 +178,8 @@ Event_Reg_SetValue
 
 26. クエリスケジューリングの場合、次のように設定します。
 
-- もう一度クエリを実行する: 5 分
-- 最後からのデータを見てください：  1 日
+- クエリの実行間隔: 5 分
+- 次の時間分の過去データを参照します：  1 日
 
 **注** 同じデータに対して意図的に多くのインシデントを生成しています。  これにより、ラボはこれらのアラートを使用できるようになります。
 
@@ -205,7 +205,7 @@ Event_Reg_SetValue
 
 このタスクでは、Microsoft Defender for Endpoint が構成されたホストで攻撃1の検出を作成します。
 
-この攻撃により、起動時に実行されるレジストリキーが作成されます。  
+この攻撃により、起動時に実行されるレジストリキーが作成されています。  
 ```Command
 REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "SOC Test" /t REG_SZ /F /D "C:\temp\startup.bat"
 ```
@@ -225,9 +225,9 @@ search "temp\\startup.bat"
 4. 結果は、3つの異なるテーブルについて示しています。
     DeviceProcessEvents
     DeviceRegistryEvents
-    イベント
+    Event
 
-    デバイス*テーブルは、Defender for Endpoint （データコネクタ-Microsoft 365 Defender） からのものです。  イベントは、データコネクタのセキュリティイベントからのものです。 
+    Device* テーブルは、Defender for Endpoint （データコネクタ-Microsoft 365 Defender） からのものです。  Event、データコネクタのセキュリティイベントからのものです。 
 
     Sysmon と Defender for Endpoint の 2 つの異なるソースからデータを受信しているため、  後で結合できる 2 つの KQL ステートメントを作成する必要があります。  しかし、最初の調査では、それぞれを個別に確認していきます。
 
@@ -276,7 +276,7 @@ DeviceRegistryEvents
 
     説明: D4E Startup Regkey in c:\temp
 
-    タクティクス: 永続化
+    方針: Persistence
 
     重大度: 高
 
@@ -286,8 +286,8 @@ DeviceRegistryEvents
 
 13. クエリスケジューリングの場合、次のように設定します。
 
-- もう一度クエリを実行する: 5 分
-- 最後からのデータを見てください： 1 日
+- クエリの実行間隔:  5 分
+- 次の時間分の過去データを参照します：  1 日
 
 **注** 同じデータに対して意図的に多くのインシデントを生成しています。  これにより、ラボはこれらのアラートを使用できるようになります。
 
@@ -311,7 +311,7 @@ DeviceRegistryEvents
 
 このタスクでは、セキュリティイベントコネクタと Sysmon がインストールされているホストで攻撃2の検出を作成します。
 
-この攻撃により、新しいユーザーが作成され、そのユーザーがローカル管理者に追加されます。
+この攻撃により、新しいユーザーが作成され、そのユーザーがローカル管理者に追加されています。
 ```Command
 net user theusernametoadd /add
 net user theusernametoadd ThePassword1!
@@ -389,9 +389,9 @@ SecurityEvent
 
 9. これにより、アナリティクスルールウィザードが起動します。  全般タブに次のように入力します
 
-- 氏名: SecurityEvents Local Administrators User Add 
+- 名前: SecurityEvents Local Administrators User Add 
 - 説明: SecurityEvents Local Administrators User Add 
-- タクティクス: 特権エスカレーション
+- 方針: Privilege Escalation
 - 重大度: 高
 
 「**次へ: ルール ロジックを設定　>**」ボタンを選択します。
@@ -400,8 +400,8 @@ SecurityEvent
 
 11. クエリスケジューリングの場合、次のように設定します。
 
-- もう一度クエリを実行する: 5 分
-- 最後からのデータを見てください： 1 日
+- クエリの実行間隔: 5 分
+- 次の時間分の過去データを参照します：  1 日
 
 **注** 同じデータに対して意図的に多くのインシデントを生成しています。  これにより、ラボはこれらのアラートを使用できるようになります。
 
@@ -411,12 +411,12 @@ SecurityEvent
 
 - インシデントの設定： 有効
 - アラート グループ： 無効
-- 「**次へ: 自動応答 >」を選択します。**
+ 「**次へ: 自動応答 >」を選択します。**
 
 14. 自動応答タブで次のように設定します。
 
 - **PostMessageTeams-OnAlert** を選択します。
-- 「**次へ: 確認 >**」ボタンを選択します。
+「**次へ: 確認 >**」ボタンを選択します。
 
 15. レビュー タブで、**作成**を選択します。
 
