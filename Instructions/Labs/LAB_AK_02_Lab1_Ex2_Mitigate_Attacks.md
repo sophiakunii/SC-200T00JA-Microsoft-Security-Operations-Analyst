@@ -1,4 +1,4 @@
-﻿# モジュール 2 - ラボ 1 - 演習 2 - Microsoft Defender for Endpoint を使用した攻撃の軽減
+# モジュール 2 - ラボ 1 - 演習 2 - Microsoft Defender for Endpoint を使用した攻撃の軽減
 
 ## ラボ シナリオ
 
