@@ -46,11 +46,11 @@
 
 3. 「構成」 領域から 「**接続**」 ボタンを選択します。
 
-### タスク 4: Azure Defender コネクタを接続する
+### タスク 4: Azure Defender(Microsoft Defender for Cloud) コネクタを接続する
 
 このタスクでは、Azure Defender コネクタを接続します。
 
-1. データ コネクタ タブで、リストから 「**Azure Defender**」 コネクタを選択します。
+1. データ コネクタ タブで、リストから 「**Microsoft Defender for Cloud**」 コネクタを選択します。
 
 2. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
 
@@ -60,11 +60,11 @@
 
 5. 「インシデントの作成 - 推奨!」 領域で、「**有効にする**」 を選択します。
 
-### タスク 5: Microsoft Cloud App Security コネクタを接続する。
+### タスク 5: Microsoft Cloud App Security(Microsoft Defender for Cloud Apps) コネクタを接続する。
 
 このタスクでは、Microsoft Cloud App Security コネクタをに接続します。
 
-1. データ コネクタ タブで、リストから 「**Microsoft Cloud App Security**」 コネクタを選択します。
+1. データ コネクタ タブで、リストから 「**Microsoft Defender for Cloud Apps**」 コネクタを選択します。
 
 2. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
 
