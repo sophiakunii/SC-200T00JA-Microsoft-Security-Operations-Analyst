@@ -69,7 +69,7 @@ applicationSet = makeset(AppDisplayName) by UserPrincipalName, IPAddress
 
 1. Azureポータルの検索バーに「*Azure Active Directory*」と入力します。「**Azure Active Directory**」を選択します。
 
-2. アクセス許可エリアで「**ユーザー**」を選択します。
+2. 左側のメニューで「**ユーザー**」を選択します。
 
 3. リストからユーザー「**ChristieCline**」を選択すると、Christie Cline の | プロフィール ページが表示されます。
 
