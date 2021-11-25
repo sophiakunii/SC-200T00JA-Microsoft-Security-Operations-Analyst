@@ -1,4 +1,4 @@
-﻿# モジュール 6 - ラボ 1 - 演習 2 - データコネクタを使用して Windows デバイスを Azure Sentinel に接続する
+# モジュール 6 - ラボ 1 - 演習 2 - データコネクタを使用して Windows デバイスを Azure Sentinel に接続する
 
 ### タスク 1: Azure で Windows 仮想マシンを作成する
 
