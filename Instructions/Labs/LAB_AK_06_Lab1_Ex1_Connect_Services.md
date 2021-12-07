@@ -1,4 +1,4 @@
-# モジュール 6 - ラボ 1 - 演習 1 - データコネクタを使用して Azure Sentinel にデータを接続する
+# モジュール 6 - ラボ 1 - 演習 1 - データ コネクタを使用して Azure Sentinel にデータを接続する
 
 ## ラボ シナリオ
 
@@ -6,31 +6,31 @@
 
 あなたは、Azure Sentinel データ コネクタを使用して、さまざまなソースからのログ データを統合することを計画しています。組織の各データ ソースを適切な Azure Sentinel データ コネクタにマップする管理用のコネクタ計画を作成する必要があります。
 
-**重要な警告!**  仮想マシン WIN1 と WIN2 はモジュール７で使います。   仮想マシンを保存します。   保存せずにラボを終了する場合は、WIN1 と WIN2 にコネクタを再度インストールする必要があります。
+**重要な警告!**  仮想マシン WIN1とWIN2はモジュール７で使います。  仮想マシンを保存します。   保存せずにラボを終了する場合は、WIN1とWIN2にコネクタを再度インストールする必要があります。
 
-### タスク 1: Azure Sentinel ワークスペースにアクセスします。
+### タスク 1: AzureSentinel ワークスペースにアクセスする。
 
 このタスクでは、Azure Sentinel ワークスペースにアクセスします。
 
-1. 管理者として WIN1 仮想マシンにログインします。パスワードは **Pa55w.rd** です。  
+1. 管理者として WIN1 仮想マシンにログインします。パスワードは**Pa55w.rd** です。  
 
 2. Microsoft Edge ブラウザーを開きます。
 
-3. Microsoft Edgeブラウザーで Azure ポータルに移動します https://portal.azure.com。
+3. Microsoft Edge ブラウザーで Azure portal (https://portal.azure.com) に移動します。
 
-4. **サインイン**ダイアログボックスで、ラボ ホスティング プロバイダーから提供された**テナントの電子メール**アカウントをコピーして貼り付け、「**次へ**」 を選択します。
+4. **サインイン** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントの電子メール**アカウントをコピーして貼り付け、「**次へ**」を選択します。
 
 5. **パスワードの入力**ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントパスワード** をコピーして貼り付け、「**サインイン**」を選択します。
 
-6. Azure ポータルの検索バーに 「*Sentinel*」 と入力し、「**Azure Sentinel**」 を選択します。
+6. Azure portal の検索バーに「*Sentinel*」と入力してから、「**Azure Sentinel**」を選択します。
 
-7. 前のラボで作成した Azure Sentinel ワークスペースを選択します。
+7. 前のラボで作成した AzureSentinel ワークスペースを選択します。
 
 ### タスク 2: Azure Active Directory コネクタを接続する
 
 このタスクでは、Azure Active Directory コネクタを Azure Sentinel に接続します。
 
-1. 構成領域で、 「**データコネクタ**」を選択します。  データ コネクタ ページで、リストから **Azure Active Directory** タイルを選択します。
+1. 構成領域で、「**データコネクタ**」を選択します。  データ コネクタ ページで、リストから**Azure Active Directory** タイルを選択します。
 
 2. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
 
@@ -40,17 +40,17 @@
 
 このタスクでは、Azure Active Directory Identity Protection コネクタを Azure Sentinel に接続します。
 
-1. データ コネクタ タブで、リストから 「**Azure Active Directory Identity Protection**」 コネクタを選択します。
+1. データ コネクタ タブで、リストから「**Azure Active Directory Identity Protection**」コネクタを選択します。
 
 2. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
 
 3. 「構成」 領域から 「**接続**」 ボタンを選択します。
 
-### タスク 4: Azure Defender(Microsoft Defender for Cloud) コネクタを接続する
+### タスク 4: Microsoft Defender for Cloud コネクタを接続する。
 
-このタスクでは、Azure Defender コネクタを接続します。
+このタスクでは、Microsoft Defender for Cloud コネクタを接続します。
 
-1. データ コネクタ タブで、リストから 「**Microsoft Defender for Cloud**」 コネクタを選択します。
+1. データ コネクタ タブで、リストから「**Microsoft Defender for Cloud**」コネクタを選択します。
 
 2. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
 
@@ -58,19 +58,19 @@
 
 4. 「接続」メッセージを確認し、「**OK**」 を選択して続行します。これで、Azure サブスクリプションの「状態」が「*接続済み*」になります。
 
-5. 「インシデントの作成 - 推奨!」 領域で、「**有効にする**」 を選択します。
+5. 下のスクロールして、「インシデントの作成 - 推奨!」 領域で、「**有効にする**」 を選択します。
 
-### タスク 5: Microsoft Cloud App Security(Microsoft Defender for Cloud Apps) コネクタを接続する。
+### タスク 5: Microsoft Defender for Cloud Apps コネクタを接続する。
 
-このタスクでは、Microsoft Cloud App Security コネクタをに接続します。
+このタスクでは、Microsoft Defender for Cloud Apps コネクタを接続します。
 
-1. データ コネクタ タブで、リストから 「**Microsoft Defender for Cloud Apps**」 コネクタを選択します。
+1. データ コネクタ タブで、リストから「**Microsoft Defender for Cloud Apps**」コネクタを選択します。
 
 2. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
 
 3. 「**アラート**」 を選択し、「**変更の適用**」 を選択します。
 
-### タスク 6: Microsoft Defender for Office 365 に接続する
+### タスク 6: Microsoft Defender for Office 365 を接続する
 
 このタスクでは、Microsoft Defender for Office 365 コネクタを接続します。
 
@@ -80,21 +80,21 @@
 
 3. 構成領域で、「**接続**」を選択します。
 
-### タスク 7: Microsoft Defender for Identity コネクタに接続する
+### タスク 7: Microsoft Defender for forIdentity コネクタに接続する
 
 このタスクでは、Microsoft Defender for Identity コネクタ確認します。
 
-1. データ コネクタ タブで、リストから 「**Microsoft Defender for Identity**」 コネクタを選択します。
+1. データ コネクタ タブで、リストから「**Microsoft Defender for Identity**」コネクタを選択します。
 
 2. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
 
-3. 接続オプションを確認しますが、接続はしません。画面の確認だけを行ってください。
+3. 接続オプションを確認します。接続しない。これは情報提供のみを目的としています。
 
-### タスク 8: Microsoft Defender for Endpoint コネクタに接続する
+### タスク 8: Microsoft Defender for Endpointコネクタに接続する
 
 このタスクでは、Microsoft Defender for Endpoint コネクタを接続します。
 
-1. データ コネクタ タブで、リストから 「**Microsoft Defender for Endpoint**」 コネクタを選択します。
+1. データ コネクタ タブで、リストから「**Microsoft Defender for Endpoint**」コネクタを選択します。
 
 2. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
 
@@ -108,8 +108,28 @@
 
 2. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
 
-3. Microsoft Defender for Endpoint のすべてのチェックボックスを選択します。
+3. 「*名前*」チェックボックスを選択して、Microsoft Defender for Endpoint のすべてのチェックボックスを選択します。
 
 4. 「**変更の適用**」を選択します。
+
+### タスク 10: Azure Activity コネクタを接続する。
+
+このタスクでは、Azure Activity コネクタを接続します。
+
+1. データ コネクタ タブで、リストから「**Azure Activity**」コネクタを選択します。
+
+2. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
+
+3. 構成領域で、「**Launch Azure Policy Assignment Wizard>**」 (Azure ポリシー割り当てウィザードの起動) を選択します。
+
+4. **基本**タブで、「**スコープ**」の下で、3 つのドット付きのボタンを選択し、ドロップダウン リストからサブスクリプションを選択して、「**選択**」をクリックします。
+
+5. **パラメーター** タブを選択し、「**プライマリ Log Analytics ワークスペース**」ドロップダウン リストから、Azure Sentinel ワークスペースを選択します。
+
+6. 「**修復**」タブを選択し、「**修復タスクの作成**」チェックボックスを選択します。
+
+7. 「**確認および作成**」ボタンを選択して、設定を確認します。
+
+8. 「**作成**」を選択して完了します。
 
 ## 演習 2 に進みます。

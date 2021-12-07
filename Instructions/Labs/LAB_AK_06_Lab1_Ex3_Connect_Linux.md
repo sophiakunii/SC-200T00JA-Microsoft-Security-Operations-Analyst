@@ -1,28 +1,28 @@
-# モジュール 6 - ラボ 1 - 演習 3 - データコネクタを使用して Linux ホストを Azure Sentinel に接続する
+# モジュール 6 - ラボ 1 - 演習 3 - データ コネクタを使用して Linux ホストを Azure Sentinel に接続する
 
-### タスク 1: Azure Sentinel ワークスペースにアクセスします。
+### タスク 1: AzureSentinel ワークスペースにアクセスする。
 
 このタスクでは、Azure Sentinel ワークスペースにアクセスします。
 
-1. 管理者として WIN1 仮想マシンにログインします。パスワードは **Pa55w.rd** です。  
+1. 管理者として WIN1 仮想マシンにログインします。パスワードは**Pa55w.rd** です。  
 
 2. 新しい Microsoft Edge ブラウザーを起動します。
 
-3. Edge ブラウザーで Azure ポータルに移動します https://portal.azure.com
+3. Microsoft Edge ブラウザーで Azure portal (https://portal.azure.com) に移動します。
 
 4. **サインイン** ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントの電子メール**アカウントをコピーして貼り付け、「**次へ**」を選択します。
 
 5. **パスワードの入力**ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントパスワード** をコピーして貼り付け、「**サインイン**」を選択します。
 
-6. Azure ポータルの検索バーに 「*Sentinel*」 と入力し、「**Azure Sentinel**」 を選択します。
+6. Azure portal の検索バーに「*Sentinel*」と入力してから、「**Azure Sentinel**」を選択します。
 
-7. 前のラボで作成した Azure Sentinel ワークスペースを選択します。
+7. 前のラボで作成したAzureSentinel ワークスペースを選択します。
 
 ### タスク 2: Common Event Format のコネクタを使用してLinuxホストを接続します。
 
-このタスクでは、Linux ホストを Common Event Format （CEF） コネクタを使用して Azure Sentinel に接続します。
+このタスクでは、LinuxホストをCommon Event Format（CEF）コネクタを使用してAzureSentinelに接続します。
 
-1. AzureSentinelの構成領域から「**データコネクタ**」を選択します。  データ コネクタ タブで、リストから**Common Event Format （CEF）** コネクタを選択します。
+1. AzureSentinelの構成領域から「**データコネクタ**」を選択します。  データ コネクタ タブで、リストから**共通イベント形式 (CEF)** コネクタを選択します。
 
 2. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
 
@@ -32,7 +32,7 @@
 
    ![Linux ログイン](../Media/LinuxLoginExample.png)
 
-5. WIN1 仮想マシンに戻り、管理者として Windows PowerShell を起動します。
+5. WIN1 仮想マシンに戻り、スタート メニュー アイコンを右クリックして、管理者として、Windows PowerShell を起動し、「**Windows PowerShell (管理者)**」を選択します。「**はい**」を選択して、表示されるユーザー アカウント制御ウィンドウで、アプリの実行を許可します。
 
 6. 次の PowerShell コマンドを入力し、特定の Linux サーバー情報に合わせて調整し、Enter キーを押します。
 
@@ -40,7 +40,7 @@
 ssh <insert your linux IP address here> -l <insert linux user name here>
 ```
 
-7. PowerShell でユーザーのパスワードの入力を求められたら、パスワードを入力して Enter キーを押します。  画面は次のようになります。
+7. 「*yes*」と入力して、接続を確認してから、ユーザーのパスワードを入力して、Enter キーを押します。画面は次のようになります。
 
    ![Linux ログイン](../Media/PSconnectLinux.png)
 
@@ -53,21 +53,21 @@ ssh <insert your linux IP address here> -l <insert linux user name here>
 
    ![ConnectorScript](../Media/LinuxConnected.png)
 
-### タスク 3: Syslog コネクタを使用して Linux ホストを接続します。
+### タスク 3: Syslog コネクタを使用して Linux ホストを接続する。
 
-このタスクでは、Linux ホストを　Syslog　コネクタを使用して　Azure　Sentinel　に接続します。
+このタスクでは、Linux ホストを Syslog コネクタを使用して Azure Sentinel に接続します。
 
-1. WIN1 に接続します。WIN1 では、 Azure Sentinel ワークスペースをポータルで表示しているはずです。  
+1. WIN1 に接続します。WIN1 は、ワークスペースの Azure Sentinel ポータルに既に存在しているはずです。  
 
 2. データ コネクタ タブで、リストから **Syslog** コネクタを選択します。
 
 3. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
 
-4. **Install agent on a non-Azure Linux Machine**セクションを開きます。
+4. **非 Azure Linux マシンにエージェントをインストール**セクションを開きます。
 
-5. **Azure 以外の Linux マシンのエージェントをダウンロードしてインストールする** をクリックします。 
+5. **非 Azure Linux マシン用のエージェントをダウンロードしてインストールする**リンクを選択します。 
 
-6. 「**Linux サーバー**」のタブを選択します。
+6. 「**Linuxサーバー**」のタブを選択します。
 
 7. *Linux 用のダウンロードおよびオンボード エージェント*領域のコマンドをクリップボードにコピーします。
 
@@ -75,7 +75,9 @@ ssh <insert your linux IP address here> -l <insert linux user name here>
 
    ![Linux ログイン](../Media/LinuxLoginExample.png)
 
-9. WIN1 仮想マシンに戻り、管理者として Windows PowerShell を起動します。
+9. WIN1 仮想マシンに戻り、スタート メニュー アイコンを右クリックして、管理者として、新しい Windows PowerShell を起動し、「**Windows PowerShell (管理者)**」を選択します。「**はい**」を選択して、表示されるユーザー アカウント制御ウィンドウで、アプリの実行を許可します。
+
+**注:** 「*exit*」と入力して、LIN1 に対する接続を閉じて、最後のタスクの*インストールを完了した*場合、Windows PowerShell ウィンドを再使用できます。
 
 10. 次の PowerShell コマンドを入力し、特定の Linux サーバー情報に合わせて調整し、Enter キーを押します。
 
@@ -83,7 +85,7 @@ ssh <insert your linux IP address here> -l <insert linux user name here>
 ssh <insert your linux IP address here> -l <insert linux user name here>
 ```
 
-11. PowerShell でユーザーのパスワードの入力を求められたら、パスワードを入力して Enter キーを押します。  画面は次のようになります。
+11. 「*yes*」と入力して、接続を確認してから、ユーザーのパスワードを入力して、Enter キーを押します。画面は次のようになります。
 
    ![Linux ログイン](../Media/PSconnectLinux.png)
 
@@ -91,25 +93,25 @@ ssh <insert your linux IP address here> -l <insert linux user name here>
 
 13. スクリプトが貼り付けられたら、Enter キーを押します。スクリプトは Linux サーバーに対してリモートで実行されます。タスクが完了しました。このコースのこれ以上のラボは、この接続に依存していません。
 
-### タスク 4: 収集するファシリティとその重大度を Syslog コネクタ用に設定します。
+### タスク 4: 収集するファシリティとその重大度をSyslogコネクタ用に設定します。
 
-このタスクでは、Syslog 収集機能を構成します。
+このタスクでは、Syslog収集機能を構成します。
 
-1. WIN1 仮想マシンに接続します。
+1. WIN1仮想マシンに接続します。
 
-2. Azure Sentinel ポータルで、設定ブレードから「**設定**」、「**ワークスペース設定**」の順に選択します。
+2. Azure Sentinelポータルで、設定ブレードから「**設定**」、「**ワークスペース設定**」の順に選択します。
 
 3. 「**設定**」領域で「**エージェントの構成**」を選択します。
 
-4. 「**Syslog**」 タブを選択します。
+4. 「**Syslog**」タブを選択します。
 
-5. 「**+ ファシリティの追加**」ボタンを選択します。
+5. 「**+ 設備の追加**」ボタンを選択します。
 
-6. 「*ファシリティ名*」ドロップダウン メニューから「**auth**」を選択します。
+6. 「*施設名*」ドロップダウン メニューから「**認証**」を選択します。
 
-7. 「**ファシリティの追加**」ボタンを選択します。
+7. 「**+ 設備の追加**」ボタンを再度選択します。
 
-8. 「*ファシリティ名*」ドロップダウン メニューから「*authpriv*」を入力します。
+8. 「*施設名*」ドロップダウン メニューから「**authpriv**」を選択します。
 
 9. 「**適用**」を選択します。  このタスクが完了しました。
 
