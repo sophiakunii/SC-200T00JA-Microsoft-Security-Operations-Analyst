@@ -1,4 +1,4 @@
-﻿# モジュール 6 - ラボ 1 - 演習 3 - データ コネクタを使用して Linux ホストを Azure Sentinel に接続する
+# モジュール 6 - ラボ 1 - 演習 3 - データ コネクタを使用して Linux ホストを Azure Sentinel に接続する
 
 ### タスク 1: AzureSentinel ワークスペースにアクセスする。
 
