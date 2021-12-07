@@ -1,4 +1,4 @@
-﻿# モジュール 3 - ラボ 1 - 演習 2 - Microsoft Defender for Cloud を使用して脅威を軽減する
+# モジュール 3 - ラボ 1 - 演習 2 - Microsoft Defender for Cloud を使用して脅威を軽減する
 
 ## ラボ シナリオ
 
