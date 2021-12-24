@@ -96,7 +96,7 @@
 
 10. クエリ ボックスに「**SecurityEvent**」と入力し、「**Run Query**」ボタンを選択します。
 
-11. **Time Range**を「**Last 3 days**」に変更します。
+11. **Time Range**を「**Last 30 minutes**」に変更します。
 
 12. **Visualization** を「**Bar chart**」に変更して、結果を確認します。
 
