@@ -1,4 +1,11 @@
+﻿---
+lab:
+    title: '演習 4 - データ コネクタを使用して、脅威インテリジェンスを Microsoft Sentinel に接続する'
+    module: 'モジュール 6 – ログを Microsoft Sentinel に接続する'
+---
+
 # モジュール 6 -ラボ 1 -演習 4 - データ コネクタを使用して脅威インテリジェンスを Microsoft Sentinel に接続する
+
 
 ### タスク 1: 脅威インテリジェンスの接続
 
@@ -12,15 +19,15 @@
 
 4. **パスワードの入力**ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントパスワード** をコピーして貼り付け、「**サインイン**」を選択します。
 
-5. Azure portal の検索バーに「**Sentinel**」と入力してから、「**Microsoft Sentinel**」を選択します。
+5. Azure portal の検索バーに「*Sentinel*」と入力し、「**Microsoft Sentinel**」を選択します。
 
-6. 先ほど作成した Azure Sentinel ワークスペースを選択します。
+6. 先ほど作成した Microsoft Sentinel ワークスペースを選択します。
 
 7. データ コネクタ タブから、**脅威インテリジェンス - TAXII** コネクタを選択します。
 
 8. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
 
-9. 「構成」 領域で、**フレンドリ名 (サーバー用)** に **PhishURLs** と入力します。
+9. 「構成」 領域で、**フレンドリ名 (サーバー用)** に *PhishURLs* と入力します。
 
 10. API ルート URL には、https://limo.anomali.com/api/v1/taxii2/feeds/ と入力します。
 
@@ -32,8 +39,8 @@
 
 14. 次に、「**追加**」ボタンを選択します。  
 
-フィッシング URL はプルされ、ThreatIntelligenceIndicator テーブルに入力されます。
+    フィッシング URL はプルされ、ThreatIntelligenceIndicator テーブルに入力されます。
 
-**注:** 追加のコレクションについては、ブラウザーで https://limo.anomali.com/api/v1/taxii2/feeds/collections/ を開き、ゲスト ユーザー名とパスワードを使用して、使用可能なさまざまなコレクション ID を確認してください。
+>**注:** 追加のコレクションについては、ブラウザーで https://limo.anomali.com/api/v1/taxii2/feeds/collections/ を開き、ゲストユーザー名とパスワードを使用して、使用可能なさまざまな コレクション ID を確認してください。
 
 ## これでラボは完了です。

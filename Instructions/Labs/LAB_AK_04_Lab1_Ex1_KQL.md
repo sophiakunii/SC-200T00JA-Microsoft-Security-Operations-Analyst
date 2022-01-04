@@ -1,9 +1,15 @@
-# モジュール 4 - ラボ 1 - 演習 1 - Kusto クエリ言語 (KQL) を使用して Microsoft Sentinel のクエリを作成する
+﻿---
+lab:
+    title: '演習 1 - Kusto クエリ言語 (KQL) を使用して Microsoft Sentinel のクエリを作成する'
+    module: 'モジュール 4 - Kusto クエリ言語 (KQL) を使用したMicrosoft Sentinel用のクエリの作成'
+---
+
+# モジュール 4 - ラボ 1 - 演習 1 - Kusto クエリ言語 (KQL) を使用した Microsoft Sentinel 用のクエリの作成
 
 ## ラボ シナリオ
 あなたは、Microsoft Sentinel を実装しようとしている会社で働いているセキュリティ オペレーションアナリストです。悪意のあるアクティビティを検索し、視覚化を表示し、脅威ハンティングを実行するためにログ データ分析を行う責任があります。ログ データのクエリを実行するには、Kusto クエリ言語 (KQL) を使用します。
 
-> **ヒント:** このラボでは、多くの KQL スクリプトを Azure Sentinel に入力します。スクリプトは、このラボの始めのファイルに含まれています。次の URL からもダウンロードできます。  https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Allfiles
+>**ヒント:** このラボでは、多くの KQL スクリプトを Microsoft Sentinel に入力します。スクリプトは、このラボの開始部のファイルで提供されます。それらをダウンロードするための代替の場所は以下の通りです。  https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Allfiles
 
 
 ### タスク 1: KQLテストエリアにアクセスします。
@@ -24,11 +30,12 @@ SecurityEvent
 
 5. 最初のレコードの横にある「**>**」を選択して、行の情報を展開します。
 
+
 ### タスク 2: 基本的なKQL ステートメントを実行する
 
 このタスクでは 基本的なKQL ステートメントを作成します。
 
-> **重要:**  各手順で、クエリ ウィンドウから前のステートメントをクリアするか、最後に開いたタブ (最大 25) の後の「**+**」を選択して新しいクエリ ウィンドウを開きます。
+>**重要:**  それぞれのクエリで、クエリ ウィンドウから前のステートメントをクリアするか、最後に開いたタブ (最大 25) の後の「**+**」を選択して新しいクエリ ウィンドウを開きます。
 
 1. 次のステートメントは、letステートメントを使用して変数をデモンストレーションする方法を示しています。クエリ ウィンドウ内次のステートメントを入力し、「**実行**」を選択します。 
 
@@ -66,7 +73,7 @@ LowActivityAccounts | where Account contains "sql"
 search "err"
 ```
 
-> **警告:** 次のスクリプトのために、必ず時間範囲を「過去24時間」に戻してください。
+>**警告**：次のスクリプトのために、必ず時間範囲を「過去24時間」に戻してください。
 
 5. 次のステートメントは、「in」句でリストされたテーブル全体で、クエリウィンドウに表示されるクエリ時間範囲内のレコードを検索する方法を示しています。クエリ ウィンドウ内次のステートメントを入力し、「**実行**」を選択します。 
 
@@ -128,7 +135,7 @@ SecurityAlert
 
 9. 次のステートメントは、プロジェクト演算子を使用して結果セットのフィールドを指定する方法を示しています。
 
-> **注:** 以下の各コードブロックからクエリを入力した後、"実行" する必要があります。
+    >**注:** 以下の各コードブロックからクエリを入力した後、「実行」する必要があります。
 
 クエリ ウィンドウ内次のステートメントを入力し、「**実行**」を選択します。 
 
@@ -149,6 +156,7 @@ SecurityAlert
 | order by severityOrder
 | project-away severityOrder
 ```
+
 
 ### タスク 3: Summarize演算子を使用してKQLで結果を分析する
 
@@ -216,7 +224,7 @@ SecurityEvent
 | summarize arg_max(TimeGenerated, *) by Account
 ```
 
-> **注:**  「完了」バーを選択して、「合計 CPU」と「処理されたクエリに使用されたデータ」を確認することもできます。 バーを開き、両方のステートメント間のデータを比較します。
+>**注:**  「完了」バーを選択して「合計 CPU」と「処理されたクエリに使用されたデータ」を確認し、両方のステートメント間のデータを比較することができます。
 
 7. 次のステートメントは、make_list 関数を示しています。
 
@@ -240,6 +248,7 @@ SecurityEvent
 | summarize make_set(Account) by Computer
 ```
 
+
 ### タスク 4: レンダー演算子を使用してKQLでビジュアライゼーションを作成します
 
 このタスクでは,KQLステートメントを使用した視覚化の生成を使用します
@@ -262,6 +271,7 @@ SecurityEvent
 | render timechart
 ```
 
+
 ### タスク 5: KQLでマルチテーブルステートメントを作成する
 
 このタスクでは、マルチテーブルKQLステートメントを作成します。
@@ -269,12 +279,14 @@ SecurityEvent
 1. 次のステートメントは、2つ以上のテーブルを取得し、それらすべての行を返すunion演算子を示しています。結果を渡す方法、およびパイプ文字によってどのような影響があるかを理解することは重要です。クエリ ウィンドウ内次のステートメントを入力し、それぞれに対し、「**実行**」を選択して、結果を確認します。 
 
 **Query 1** で SecurityEvent のすべての行と SecurityAlert のすべての行が返されます
+
 ```KQL
 SecurityEvent 
 | union SecurityAlert  
 ```
 
 **Query 2** で SecurityEvent のすべての行数と SecurityAlert のすべての行数である 1 つの行と列が返されます
+
 ```KQL
 SecurityEvent 
 | union SecurityAlert  
@@ -283,6 +295,7 @@ SecurityEvent
 ```
 
 **Query 3** で SecurityEvent のすべての行と SecurityAlert のすべての 1 つの行が返されます  SecurityAlert の行は、SecurityAlert の行数です。
+
 ```KQL
 SecurityEvent 
 | union (SecurityAlert  | summarize count()) 
@@ -312,6 +325,7 @@ SecurityEvent
 ```
 
 結合で指定した最初のテーブルが左テーブルと見なされます。  join キーワードの後のテーブルが右テーブルです。  テーブルの列を操作する場合、$ left.Columnnameと$ right.Column nameは、参照されるテーブルの列を区別するためのものです。 
+
 
 ### タスク 6: KQLで文字列データを操作する
 
@@ -411,4 +425,3 @@ MailboxForward
 ```
 
 ## これでラボは完了です。
-
