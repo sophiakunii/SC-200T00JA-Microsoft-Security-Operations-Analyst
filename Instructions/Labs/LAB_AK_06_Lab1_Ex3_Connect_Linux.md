@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '演習 3 - データ コネクタを使用して、Linux ホストを Microsoft Sentinel に接続する'
     module: 'モジュール 6 – ログを Microsoft Sentinel に接続する'
