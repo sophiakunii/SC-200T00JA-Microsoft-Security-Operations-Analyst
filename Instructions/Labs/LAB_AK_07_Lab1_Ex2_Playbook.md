@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '手順 2 - プレイブックを作成する'
     module: 'モジュール 7 – Microsoft Sentinel を使用して脅威を検出し、調査を実行する'
