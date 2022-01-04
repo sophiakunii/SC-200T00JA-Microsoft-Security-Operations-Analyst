@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '演習 1 - Microsoft Defender for Cloud の有効化'
     module: 'モジュール 3 – Microsoft Defender for Cloud を使用して脅威を軽減する'
