@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '演習 1 - Kusto クエリ言語 (KQL) を使用して Microsoft Sentinel のクエリを作成する'
     module: 'モジュール 4 - Kusto クエリ言語 (KQL) を使用したMicrosoft Sentinel用のクエリの作成'
