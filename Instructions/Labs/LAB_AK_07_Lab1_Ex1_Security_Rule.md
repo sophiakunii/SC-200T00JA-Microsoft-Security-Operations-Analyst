@@ -1,8 +1,15 @@
+---
+lab:
+    title: '演習 1 - Microsoft セキュリティ ルールを有効化する'
+    module: 'モジュール 7 – Microsoft Sentinel を使用して脅威を検出し、調査を実行する'
+---
+
 # モジュール 7 - ラボ 1 - 演習 1 - Microsoft セキュリティ ルールを有効化する
 
 ## ラボ シナリオ
 
-あなたは Microsoft Sentinel を実装した企業で働いているセキュリティ オペレーションアナリストです。Microsoft Sentinelを使った脅威の検出と軽減方法を学習する必要があります。  他のMicrosoft 365とAzureサービスからのアラートを有効にする必要があります。  
+あなたは、Microsoft Sentinel を実装した会社で働いているセキュリティ オペレーションアナリストです。Microsoft Sentinelを使った脅威の検出と軽減方法を学習する必要があります。  他のMicrosoft 365とAzureサービスからのアラートを有効にする必要があります。  
+
 
 ### タスク 1: Microsoft Security ルールの有効化
 
@@ -16,7 +23,7 @@
 
 4. **パスワードの入力**ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントパスワード** をコピーして貼り付け、「**サインイン**」を選択します。
 
-5. Azure ポータルの検索バーに 「**Sentinel**」 と入力し、「**Microsoft Sentinel**」 を選択します。
+5. Azure portal の検索バーに「*Sentinel*」と入力し、「**Microsoft Sentinel**」を選択します。
 
 6. 前のラボで作成した Microsoft Sentinel ワークスペースを選択します。
 

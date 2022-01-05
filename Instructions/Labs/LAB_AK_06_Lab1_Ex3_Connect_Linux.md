@@ -1,4 +1,11 @@
+---
+lab:
+    title: '演習 3 - データ コネクタを使用して Linux ホストを Microsoft Sentinel に接続する'
+    module: 'モジュール 6 – ログを Microsoft Sentinel に接続する'
+---
+
 # モジュール 6 - ラボ 1 - 演習 3 - データ コネクタを使用して Linux ホストを Microsoft Sentinel に接続する
+
 
 ### タスク 1: Microsoft Sentinel ワークスペースにアクセスする。
 
@@ -14,15 +21,16 @@
 
 5. **パスワードの入力**ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントパスワード** をコピーして貼り付け、「**サインイン**」を選択します。
 
-6. Azure portal の検索バーに「*Sentinel*」と入力してから、「**Microsoft Sentinel**」を選択します。
+6. Azure portal の検索バーに「*Sentinel*」と入力し、「**Microsoft Sentinel**」を選択します。
 
-7. Microsoft Sentinel ワークスペースを選択します。
+7. 前のラボで作成した Microsoft Sentinel ワークスペースを選択します。
+
 
 ### タスク 2: Common Event Format のコネクタを使用してLinuxホストを接続します。
 
 このタスクでは、LinuxホストをCommon Event Format（CEF）コネクタを使用して Microsoft Sentinelに接続します。
 
-1. Microsoft Sentinelの構成領域から「**データコネクタ**」を選択します。  データ コネクタ タブで、リストから**Common Event Format(CEF)** コネクタを選択します。
+1. Microsoft Sentinel の構成領域から「**データコネクタ**」を選択します。  「データ コネクタ」タブから、「**Common Event Format (CEF)**」コネクタを検索し、リストから選択します。
 
 2. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
 
@@ -40,7 +48,7 @@
 ssh <insert your linux IP address here> -l <insert linux user name here>
 ```
 
-7. 「**yes**」と入力して、接続を確認してから、ユーザーのパスワードを入力して、Enter キーを押します。画面は次のようになります。
+7. 「*yes*」と入力して、接続を確認してから、ユーザーのパスワードを入力して、Enter キーを押します。画面は次のようになります。
 
    ![Linux ログイン](../Media/PSconnectLinux.png)
 
@@ -48,17 +56,19 @@ ssh <insert your linux IP address here> -l <insert linux user name here>
 
    ![ConnectorScript](../Media/ConnectorScript.png)
 
+
 9. スクリプトを貼り付けて調整したら、Enter キーを押します。スクリプトは Linux サーバーに対してリモートで実行されます。スクリプトが適切に処理されると、次の画面のようになります。
 
    ![ConnectorScript](../Media/LinuxConnected.png)
 
+
 ### タスク 3: Syslog コネクタを使用して Linux ホストを接続する。
 
-このタスクでは、Linux ホストを Syslog コネクタを使用して Microsoft Sentinel に接続します。
+このタスクでは、Linux ホストを　Syslog　コネクタを使用して　Microsoft　Sentinel　に接続します。
 
 1. WIN1 に接続します。WIN1 は、ワークスペースの Microsoft Sentinel ポータルに既に存在しているはずです。  
 
-2. データ コネクタ タブで、リストから **Syslog** コネクタを選択します。
+2. 「データ コネクタ」タブから、「**Syslog**」コネクタを検索し、リストから選択します。
 
 3. コネクタ情報ブレードで「**コネクタページを開く**」を選択します。
 
@@ -76,7 +86,7 @@ ssh <insert your linux IP address here> -l <insert linux user name here>
 
 9. WIN1 仮想マシンに戻り、スタート メニュー アイコンを右クリックして、管理者として、新しい Windows PowerShell を起動し、「**Windows PowerShell (管理者)**」を選択します。「**はい**」を選択して、表示されるユーザー アカウント制御ウィンドウで、アプリの実行を許可します。
 
-**注:** 「**exit**」と入力して、LIN1 に対する接続を閉じて、最後のタスクの**インストールを完了した**場合、Windows PowerShell ウィンドを再使用できます。
+   >**注:** Windows PowerShell ウィンドウは、最後のタスクが「*インストール完了済み*」であれば、「*終了*」を入力して LIN1 への接続を閉じることにより、再使用できます。
 
 10. 次の PowerShell コマンドを入力し、特定の Linux サーバー情報に合わせて調整し、Enter キーを押します。
 
@@ -84,7 +94,7 @@ ssh <insert your linux IP address here> -l <insert linux user name here>
 ssh <insert your linux IP address here> -l <insert linux user name here>
 ```
 
-11. 「**yes**」と入力して、接続を確認してから、ユーザーのパスワードを入力して、Enter キーを押します。画面は次のようになります。
+11. 「*yes*」と入力して、接続を確認してから、ユーザーのパスワードを入力して、Enter キーを押します。画面は次のようになります。
 
    ![Linux ログイン](../Media/PSconnectLinux.png)
 
@@ -92,13 +102,14 @@ ssh <insert your linux IP address here> -l <insert linux user name here>
 
 13. スクリプトが貼り付けられたら、Enter キーを押します。スクリプトは Linux サーバーに対してリモートで実行されます。タスクが完了しました。このコースのこれ以上のラボは、この接続に依存していません。
 
+
 ### タスク 4: 収集するファシリティとその重大度をSyslogコネクタ用に設定します。
 
 このタスクでは、Syslog収集機能を構成します。
 
 1. WIN1仮想マシンに接続します。
 
-2. Azure Sentinelポータルで、設定ブレードから「**設定**」、「**ワークスペース設定**」の順に選択します。
+2. Microsoft Sentinelポータルで、設定ブレードから「**設定**」、「**ワークスペース設定**」の順に選択します。
 
 3. 「**設定**」領域で「**エージェント構成**」を選択します。
 
@@ -106,7 +117,7 @@ ssh <insert your linux IP address here> -l <insert linux user name here>
 
 5. 「**+ ファシリティの追加**」ボタンを選択します。
 
-6. 「**ファシリティ名**」ドロップダウン メニューから「**auth**」を選択します。
+6. 「*ファシリティ名*」ドロップダウン メニューから「**auth**」を選択します。
 
 7. 「**+ ファシリティの追加**」ボタンを再度選択します。
 
