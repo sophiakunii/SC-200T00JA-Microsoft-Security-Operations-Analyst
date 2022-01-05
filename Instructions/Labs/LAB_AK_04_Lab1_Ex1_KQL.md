@@ -1,6 +1,6 @@
 ﻿---
 lab:
-    title: '演習 1 - Kusto クエリ言語 (KQL) を使用して Microsoft Sentinel のクエリを作成する'
+    title: '演習 1 - Kusto クエリ言語 (KQL) を使用した Microsoft Sentinel 用のクエリの作成'
     module: 'モジュール 4 - Kusto クエリ言語 (KQL) を使用したMicrosoft Sentinel用のクエリの作成'
 ---
 
@@ -9,7 +9,7 @@ lab:
 ## ラボ シナリオ
 あなたは、Microsoft Sentinel を実装しようとしている会社で働いているセキュリティ オペレーションアナリストです。悪意のあるアクティビティを検索し、視覚化を表示し、脅威ハンティングを実行するためにログ データ分析を行う責任があります。ログ データのクエリを実行するには、Kusto クエリ言語 (KQL) を使用します。
 
->**ヒント:** このラボでは、多くの KQL スクリプトを Microsoft Sentinel に入力します。スクリプトは、このラボの開始部のファイルで提供されます。それらをダウンロードするための代替の場所は以下の通りです。  https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Allfiles
+>**ヒント:** このラボでは、多くの KQL スクリプトを Microsoft Sentinel に入力します。スクリプトは、このラボの開始部のファイルで提供されます。それらをダウンロードするための代替の場所は以下の通りです。  https://github.com/MicrosoftLearning/SC-200T00JA-Microsoft-Security-Operations-Analyst/tree/master/Allfiles
 
 
 ### タスク 1: KQLテストエリアにアクセスします。

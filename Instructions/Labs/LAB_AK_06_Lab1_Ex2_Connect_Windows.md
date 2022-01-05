@@ -1,6 +1,6 @@
 ﻿---
 lab:
-    title: '演習 2 - データ コネクタを使用して、Windows デバイスを Microsoft Sentinel に接続する'
+    title: '演習 2 - データ コネクタを使用して Windows デバイスを Microsoft Sentinel に接続する'
     module: 'モジュール 6 – ログを Microsoft Sentinel に接続する'
 ---
 
@@ -120,7 +120,7 @@ lab:
 
 このタスクでは、Sysmonログをインストールして収集します。
 
->**重要:** 引き続きWIN2 仮想マシンに接続する必要があります。次の手順では、既定構成でSysmonをインストールします。.実稼働マシンで使用するSysmonのコミュニティ-ベースの構成を調査する必要があります
+>**重要:** 引き続きWIN2 仮想マシンに接続する必要があります。次の手順では、既定構成でSysmonをインストールします。実稼働マシンで使用するSysmonのコミュニティ-ベースの構成を調査する必要があります
 
 1. ブラウザーで新しいタブを開き、https://docs.microsoft.com/sysinternals/downloads/sysmon に移動します
 
@@ -143,7 +143,7 @@ lab:
 
     >**注:**  「構成ファイルが検証されました」および「Sysmon が開始されました」というメッセージが出力に表示されることを確認します。表示されない場合は、データが適正にコピーされたこと、および sysmon.xml が保存されたことを検証します。
 
-10. ブラウザで、https：//portal.azure.com のAzureポータルに戻ります 
+10. ブラウザで、https://portal.azure.com のAzureポータルに戻ります 
 
 11. Azure portal の検索バーで、*Sentinel* と入力し、次に **Microsoft Sentinel** を選択し、前に作成した Microsoft Sentinel Workspace を選択します。
 

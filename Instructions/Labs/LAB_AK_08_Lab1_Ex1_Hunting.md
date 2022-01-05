@@ -1,6 +1,6 @@
 ﻿---
 lab:
-    title: '演習 1 – Microsoft Sentinel で脅威ハンティングを実行する'
+    title: '演習 1 - Microsoft Sentinel で脅威ハンティングを実行する'
     module: 'モジュール 8 – Microsoft Sentinel で脅威ハンティングを実行する'
 ---
 
