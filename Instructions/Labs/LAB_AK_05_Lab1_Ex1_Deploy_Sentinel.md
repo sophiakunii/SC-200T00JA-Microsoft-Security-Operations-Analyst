@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: 'この演習 1 - Microsoft Sentinel 環境を構成する'
     module: 'モジュール 5 - Microsoft Sentinel 環境を構成する'

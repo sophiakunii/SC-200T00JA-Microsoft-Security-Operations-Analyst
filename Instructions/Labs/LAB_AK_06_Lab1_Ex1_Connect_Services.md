@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '演習 1 - データ コネクタを使用して Microsoft Sentinel にデータを接続する'
     module: 'モジュール 6 – ログを Microsoft Sentinel に接続する'

@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '演習 2 - Microsoft Sentinel と Notebooks を使用した脅威ハンティング'
     module: 'モジュール 8 – Microsoft Sentinel で脅威ハンティングを実行する'

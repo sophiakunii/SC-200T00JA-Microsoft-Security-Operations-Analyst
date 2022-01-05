@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '演習 5 - 攻撃の実施'
     module: 'モジュール 7 – Microsoft Sentinel を使用して脅威を検出し、調査を実行する'

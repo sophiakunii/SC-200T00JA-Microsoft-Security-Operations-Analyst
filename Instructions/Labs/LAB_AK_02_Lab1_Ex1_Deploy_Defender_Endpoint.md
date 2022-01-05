@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '演習 1 - Microsoft Defender for Endpoint のデプロイ'
     module: 'モジュール 2 – エンドポイント用の Microsoft Defender を使用して脅威を軽減する'

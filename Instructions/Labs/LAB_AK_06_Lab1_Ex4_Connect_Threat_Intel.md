@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '演習 4 - データ コネクタを使用して脅威インテリジェンスを Microsoft Sentinel に接続する'
     module: 'モジュール 6 – ログを Microsoft Sentinel に接続する'

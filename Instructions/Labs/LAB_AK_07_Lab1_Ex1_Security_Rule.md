@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '演習 1 - Microsoft セキュリティ ルールを有効化する'
     module: 'モジュール 7 – Microsoft Sentinel を使用して脅威を検出し、調査を実行する'
