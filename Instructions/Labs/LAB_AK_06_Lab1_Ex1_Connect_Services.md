@@ -27,7 +27,7 @@ lab:
 
 5. **パスワードの入力**ダイアログ ボックスで、ラボ ホスティング プロバイダーから提供された**テナントパスワード** をコピーして貼り付け、「**サインイン**」を選択します。
 
-6. Azure portal の検索バーに「*Sentinel*」と入力し、「**Microsoft Sentinel Sentinel**」を選択します。
+6. Azure portal の検索バーに「*Sentinel*」と入力し、「**Microsoft Sentinel**」を選択します。
 
 7. 前のラボで作成した Microsoft Sentinel ワークスペースを選択します。
 
