@@ -160,7 +160,7 @@ lab:
 18. 「**適用**」を選択します。
 
 
-### タスク 5: Microsoft Defender for Endpoint ディバイスをオンボードする。
+### タスク 5: Microsoft Defender for Endpoint デバイスをオンボードする。
 
 このタスクでは、デバイスを Microsoft Defender for Endpoint にオンボードします。
 
