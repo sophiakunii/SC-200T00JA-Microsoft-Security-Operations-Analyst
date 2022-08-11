@@ -54,7 +54,7 @@ lab:
 
 16. 「**ノートブックの起動**」ボタンを選択します。Microsoft Azure Machine Learning Studio に表示されているウィンドウを閉じます。
 
-17.	画面上部の**Compute:** インスタンス セレクターの横で、**New Compute**の「**+**」記号を選択します。
+17.	画面上部の「**+**」記号を選択します。
 
 18.	*Compute name* に対して一意の名前を入力し、利用可能な最初のコンピューティングを選択します。**ヒント:** Workload type が Development。
 
