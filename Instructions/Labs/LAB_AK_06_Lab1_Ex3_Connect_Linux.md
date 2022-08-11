@@ -52,12 +52,19 @@ ssh <insert your linux IP address here> -l <insert linux user name here>
 
    ![Linux ログイン](../Media/PSconnectLinux.png)
 
-8. これで、前の手順の「**1.2 Linux マシンへの CEF コレクターのインストール**」に貼り付ける準備ができました。Azure のスクリプトがクリップボードにあることを確認してください。PowerShell で、トップ バーを右クリックし、「**編集**」、「**貼り付け**」の順に選択します。貼り付けたら、次に示すように **python** という単語に **3** を追加します。
+8. 次のコマンドを順番に実行します。
 
+```PowerShell
+apt-get update
+apt install python
+```
+
+9. これで、前の手順の「**1.2 Linux マシンへの CEF コレクターのインストール**」に貼り付ける準備ができました。Azure のスクリプトがクリップボードにあることを確認してください。PowerShell で、トップ バーを右クリックし、「**編集**」、「**貼り付け**」の順に選択します。
+<!--
    ![ConnectorScript](../Media/ConnectorScript.png)
+-->
 
-
-9. スクリプトを貼り付けて調整したら、Enter キーを押します。スクリプトは Linux サーバーに対してリモートで実行されます。スクリプトが適切に処理されると、次の画面のようになります。
+10. スクリプトを貼り付けて調整したら、Enter キーを押します。スクリプトは Linux サーバーに対してリモートで実行されます。スクリプトが適切に処理されると、次の画面のようになります。
 
    ![ConnectorScript](../Media/LinuxConnected.png)
 
@@ -109,7 +116,7 @@ ssh <insert your linux IP address here> -l <insert linux user name here>
 
 1. WIN1仮想マシンに接続します。
 
-2. Microsoft Sentinelポータルで、設定ブレードから「**設定**」、「**ワークスペース設定**」の順に選択します。
+2. Microsoft Sentinelポータルで、設定ブレードから「**設定**」、「**ワークスペースの設定**」の順に選択します。
 
 3. 「**設定**」領域で「**エージェント構成**」を選択します。
 
